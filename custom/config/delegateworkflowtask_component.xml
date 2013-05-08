@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope>   
+      <component id="delegateworkflowtask" extends="delegateworkflowtask:webcomponent/config/library/workflow/taskmanager/delegateworkflowtask_component.xml">
+            
+         <!-- Description (not NLS'd) -->
+         <desc>
+            This component allows for delegation of a workflow task if it meets certain criteria. 
+         </desc>   
+            
+         <class>com.bhpb.imp.wdk.webtop.workflow.pet.DelegateWorkflowTask</class>
+		 <nlsbundle>workflow.pet.DelegateTaskNlsProp</nlsbundle>
+      </component>
+      
+   </scope>   
+</config>

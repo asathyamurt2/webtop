@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+ 
+  
+   <!-- START PET - default to Petroleum types -->
+     <scope docbaselist="bhpb_pet_docbases" role="pet_role">
+      <component id="import" extends="import:webcomponent/config/library/contenttransfer/importcontent/import_component.xml">
+         
+         <!-- class>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContent</class-->
+         <class>com.bhpb.imp.wdk.common.importcontent.ImportContent</class>
+         <nlsbundle>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContentNlsProp</nlsbundle>
+        
+         <!-- base type for document docbase types to be retrieved  -->
+         <!-- Accepted values: dm_sysobject or its sub types -->
+         <document-docbase-base-type>dm_document</document-docbase-base-type>
+ 
+ 		<!--  Filter default type list with the below -->
+		<base_doc_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='false'>bhpb_document</object_type>
+			<object_type cascade='true'>bhpb_mail_message</object_type>
+			<object_type cascade='true'>bhpb_pet_document</object_type>
+		</base_doc_types>
+		<exclude_doc_types>
+			<object_type cascade='true'>bhpb_cann_document</object_type>
+			<object_type cascade='true'>bhpb_cann_mail_message</object_type>
+			<object_type cascade='true'>bhpb_ssca_ctrl_doc</object_type>
+			<object_type cascade='true'>bhpb_ssm_tech_email</object_type>
+			<object_type cascade='true'>bhpb_gld_controlled_doc</object_type>
+			<object_type cascade='true'>bhpb_bld_controlled_doc</object_type>
+			<object_type cascade='true'>bhpb_bcd_controlled_doc</object_type>
+		</exclude_doc_types>
+ 
+          <!--  Filter default type list with the below -->
+		 <base_folder_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='false'>dm_folder</object_type>
+			<object_type cascade='true'>bhpb_folder</object_type>
+		 </base_folder_types>
+		 <exclude_folder_types>
+		 	<object_type cascade = 'false'>bhpb_pet_facility</object_type>
+		 </exclude_folder_types>
+                  
+         <!-- default selected document type -->
+         <!-- Accepted values: <document-docbase-base-type> value or its sub types -->
+         <document-docbase-type>bhpb_pet_document</document-docbase-type>
+
+         <folder-docbase-type>dm_folder</folder-docbase-type>
+         <preserve-file-extension>false</preserve-file-extension>
+         
+      </component>
+   </scope>
+   
+        <scope docbaselist="bhpb_pet_docbases" role="pet_dco_role">
+      <component id="import" extends="import:webcomponent/config/library/contenttransfer/importcontent/import_component.xml">
+         
+         <!-- class>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContent</class-->
+         <class>com.bhpb.imp.wdk.common.importcontent.ImportContent</class>
+         <nlsbundle>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContentNlsProp</nlsbundle>
+        
+         <!-- base type for document docbase types to be retrieved  -->
+         <!-- Accepted values: dm_sysobject or its sub types -->
+         <document-docbase-base-type>dm_document</document-docbase-base-type>
+ 
+ 		<!--  Filter default type list with the below -->
+		<base_doc_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='false'>bhpb_document</object_type>
+			<object_type cascade='true'>bhpb_mail_message</object_type>
+			<object_type cascade='true'>bhpb_message_archive</object_type>
+			<object_type cascade='true'>bhpb_pet_document</object_type>
+		</base_doc_types>
+		<exclude_doc_types>
+			<object_type cascade='true'>bhpb_cann_document</object_type>
+			<object_type cascade='true'>bhpb_cann_mail_message</object_type>
+			<object_type cascade='true'>bhpb_ssca_ctrl_doc</object_type>
+			<object_type cascade='true'>bhpb_ssm_tech_email</object_type>
+			<object_type cascade='true'>bhpb_gld_controlled_doc</object_type>
+			<object_type cascade='true'>bhpb_bld_controlled_doc</object_type>
+			<object_type cascade='true'>bhpb_bcd_controlled_doc</object_type>
+		</exclude_doc_types>
+ 
+          <!--  Filter default type list with the below -->
+		 <base_folder_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='false'>dm_folder</object_type>
+			<object_type cascade='true'>bhpb_folder</object_type>
+		 </base_folder_types>
+                  
+         <!-- default selected document type -->
+         <!-- Accepted values: <document-docbase-base-type> value or its sub types -->
+         <document-docbase-type>bhpb_pet_controlled_doc</document-docbase-type>
+
+         <folder-docbase-type>dm_folder</folder-docbase-type>
+         <preserve-file-extension>false</preserve-file-extension>
+         
+      </component>
+   </scope>
+   
+      <!-- PET_WALES add dm_document -->
+     <scope docbaselist="bhpb_wales_docbases">
+      <component id="import" extends="import:webcomponent/config/library/contenttransfer/importcontent/import_component.xml">
+         
+         <!-- class>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContent</class-->
+         <class>com.bhpb.imp.wdk.common.importcontent.ImportContent</class>
+         <nlsbundle>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContentNlsProp</nlsbundle>
+        
+         <!-- base type for document docbase types to be retrieved  -->
+         <!-- Accepted values: dm_sysobject or its sub types -->
+         <document-docbase-base-type>dm_document</document-docbase-base-type>
+ 
+ 		<!--  Filter default type list with the below -->
+		<base_doc_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='false'>bhpb_document</object_type>
+			<object_type cascade='false'>dm_document</object_type>
+			<object_type cascade='true'>bhpb_mail_message</object_type>
+			<object_type cascade='true'>bhpb_message_archive</object_type>
+			<object_type cascade='true'>bhpb_pet_document</object_type>
+		</base_doc_types>
+		<exclude_doc_types>
+			<object_type cascade='true'>bhpb_cann_document</object_type>
+			<object_type cascade='true'>bhpb_cann_mail_message</object_type>
+			<object_type cascade='true'>bhpb_ssca_ctrl_doc</object_type>
+			<object_type cascade='true'>bhpb_ssm_tech_email</object_type>
+			<object_type cascade='true'>bhpb_gld_controlled_doc</object_type>
+			<object_type cascade='true'>bhpb_bld_controlled_doc</object_type>
+			<object_type cascade='true'>bhpb_bcd_controlled_doc</object_type>
+		</exclude_doc_types>
+ 
+          <!--  Filter default type list with the below -->
+		 <base_folder_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='false'>dm_folder</object_type>
+			<object_type cascade='true'>bhpb_folder</object_type>
+		 </base_folder_types>
+		 <exclude_folder_types>
+		 	<object_type cascade = 'false'>bhpb_pet_facility</object_type>
+		 </exclude_folder_types>
+                  
+         <!-- default selected document type -->
+         <!-- Accepted values: <document-docbase-base-type> value or its sub types -->
+         <document-docbase-type>bhpb_pet_document</document-docbase-type>
+
+         <folder-docbase-type>dm_folder</folder-docbase-type>
+         <preserve-file-extension>false</preserve-file-extension>
+         
+      </component>
+   </scope>
+   
+        <scope docbaselist="restrict_type_bhbp_wales" role="pet_dco_role">
+      <component id="import" extends="import:webcomponent/config/library/contenttransfer/importcontent/import_component.xml">
+         
+         <!-- class>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContent</class-->
+         <class>com.bhpb.imp.wdk.common.importcontent.ImportContent</class>
+         <nlsbundle>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContentNlsProp</nlsbundle>
+        
+         <!-- base type for document docbase types to be retrieved  -->
+         <!-- Accepted values: dm_sysobject or its sub types -->
+         <document-docbase-base-type>dm_document</document-docbase-base-type>
+ 
+ 		<!--  Filter default type list with the below -->
+		<base_doc_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='false'>bhpb_document</object_type>
+			<object_type cascade='true'>bhpb_mail_message</object_type>
+			<object_type cascade='false'>dm_document</object_type>
+			<object_type cascade='true'>bhpb_message_archive</object_type>
+			<object_type cascade='true'>bhpb_pet_document</object_type>
+		</base_doc_types>
+		<exclude_doc_types>
+			<object_type cascade='true'>bhpb_cann_document</object_type>
+			<object_type cascade='true'>bhpb_cann_mail_message</object_type>
+			<object_type cascade='true'>bhpb_ssca_ctrl_doc</object_type>
+			<object_type cascade='true'>bhpb_ssm_tech_email</object_type>
+			<object_type cascade='true'>bhpb_gld_controlled_doc</object_type>
+			<object_type cascade='true'>bhpb_bld_controlled_doc</object_type>
+			<object_type cascade='true'>bhpb_bcd_controlled_doc</object_type>
+		</exclude_doc_types>
+ 
+          <!--  Filter default type list with the below -->
+		 <base_folder_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='false'>dm_folder</object_type>
+			<object_type cascade='true'>bhpb_folder</object_type>
+		 </base_folder_types>
+                  
+         <!-- default selected document type -->
+         <!-- Accepted values: <document-docbase-base-type> value or its sub types -->
+         <document-docbase-type>bhpb_pet_controlled_doc</document-docbase-type>
+
+         <folder-docbase-type>dm_folder</folder-docbase-type>
+         <preserve-file-extension>false</preserve-file-extension>
+         
+      </component>
+   </scope>
+   
+   
+        <!-- LBA different object model -->
+     <scope docbaselist="edt_lba_docbases">
+      <component id="import" extends="import:webcomponent/config/library/contenttransfer/importcontent/import_component.xml">
+         
+         <!-- class>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContent</class-->
+         <class>com.bhpb.imp.wdk.common.importcontent.ImportContent</class>
+         <nlsbundle>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContentNlsProp</nlsbundle>
+        
+         <!-- base type for document docbase types to be retrieved  -->
+         <!-- Accepted values: dm_sysobject or its sub types -->
+         <document-docbase-base-type>dm_document</document-docbase-base-type>
+ 
+ 		<!--  Filter default type list with the below -->
+		<base_doc_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='true'>dm_document</object_type>
+		</base_doc_types>
+		<exclude_doc_types>
+		</exclude_doc_types>
+ 
+          <!--  Filter default type list with the below -->
+		 <base_folder_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='true'>dm_folder</object_type>
+		 </base_folder_types>
+		 <exclude_folder_types>
+		 </exclude_folder_types>
+                  
+         <!-- default selected document type -->
+         <!-- Accepted values: <document-docbase-base-type> value or its sub types -->
+         <document-docbase-type>dm_document</document-docbase-type>
+
+         <folder-docbase-type>dm_folder</folder-docbase-type>
+         <preserve-file-extension>false</preserve-file-extension>
+         
+      </component>
+   </scope>
+   
+   
+     
+        <!-- PAK different object model -->
+     <scope docbaselist="edt_pak_docbases">
+      <component id="import" extends="import:webcomponent/config/library/contenttransfer/importcontent/import_component.xml">
+         
+         <!-- class>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContent</class-->
+         <class>com.bhpb.imp.wdk.common.importcontent.ImportContent</class>
+         <nlsbundle>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContentNlsProp</nlsbundle>
+        
+         <!-- base type for document docbase types to be retrieved  -->
+         <!-- Accepted values: dm_sysobject or its sub types -->
+         <document-docbase-base-type>dm_document</document-docbase-base-type>
+ 
+ 		<!--  Filter default type list with the below -->
+		<base_doc_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='true'>dm_document</object_type>
+		</base_doc_types>
+		<exclude_doc_types>
+		</exclude_doc_types>
+ 
+          <!--  Filter default type list with the below -->
+		 <base_folder_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='true'>dm_folder</object_type>
+		 </base_folder_types>
+		 <exclude_folder_types>
+		 </exclude_folder_types>
+                  
+         <!-- default selected document type -->
+         <!-- Accepted values: <document-docbase-base-type> value or its sub types -->
+         <document-docbase-type>dm_document</document-docbase-type>
+
+         <folder-docbase-type>dm_folder</folder-docbase-type>
+         <preserve-file-extension>false</preserve-file-extension>
+         
+      </component>
+   </scope> 
+   
+   
+   
+   
+   
+   <!--  END PET -->
+   
+   <!-- START LEGAL -->
+   <scope docbaselist="legal_docbases">
+      <component id="import" extends="import:webcomponent/config/library/contenttransfer/importcontent/import_component.xml">
+         
+         <!-- class>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContent</class-->
+         <class>com.bhpb.imp.wdk.common.importcontent.ImportContent</class>
+         <nlsbundle>com.documentum.webcomponent.library.contenttransfer.importcontent.ImportContentNlsProp</nlsbundle>
+        
+         <!-- base type for document docbase types to be retrieved  -->
+         <!-- Accepted values: dm_sysobject or its sub types -->
+         <document-docbase-base-type>dm_document</document-docbase-base-type>
+ 
+ 		<!--  Filter default type list with the below -->
+		<base_doc_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='false'>knowledge_document</object_type>
+			<!-- object_type cascade='true'>legal_mail_message</object_type-->
+			<object_type cascade='true'>legal_document</object_type>
+		</base_doc_types>
+		<exclude_doc_types>
+			<object_type cascade='true'>bhpb_executed_doc</object_type>
+		</exclude_doc_types>
+ 
+          <!--  Filter default type list with the below -->
+		 <base_folder_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<!-- object_type cascade='false'>dm_folder</object_type-->
+			<object_type cascade='true'>legal_folder</object_type>
+		 </base_folder_types>
+                  
+         <!-- default selected document type -->
+         <!-- Accepted values: <document-docbase-base-type> value or its sub types -->
+         <document-docbase-type>legal_document</document-docbase-type>
+
+         <folder-docbase-type>dm_folder</folder-docbase-type>
+         
+      </component>
+   </scope>
+   <!--  END LEGAL -->
+    
+ </config>

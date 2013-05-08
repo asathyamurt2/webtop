@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+
+       <scope type="dm_task" role="pet_dco_role">
+         <action id="changeperformer" extends="changeperformer:webcomponent\config\actions\dm_task_actions.xml">
+                
+                 <preconditions>
+                    <precondition class="com.bhpb.imp.wdk.webtop.workflow.pet.ChangeWorkflowPerformerPrecondition"/>
+                 </preconditions>
+       
+       </action>
+       </scope> 
+</config>

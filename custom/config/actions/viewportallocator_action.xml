@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version='1.0'>
+	<scope type="dm_sysobject">
+		<action id="viewportallocator">
+			<desc> Sends one or more object locators through email.</desc>
+			<params>
+				<param name="objectId" required="true" />
+				<param name="type" required="false" />
+			</params>
+			<preconditions>
+				<precondition
+					class="com.documentum.webcomponent.library.actions.SendLocatorPrecondition">
+					<argument>objectId</argument>
+					<argument>type</argument>
+				</precondition>
+			</preconditions>
+			<execution class="com.documentum.web.formext.action.LaunchComponent">
+				<component>viewportallocator</component>
+				<container>viewportallocatorcontainer</container>
+			</execution>
+		</action>
+	</scope>
+</config>

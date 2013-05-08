@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version="1.0">
+   <scope docbaselist="bhpb_types_available" role='pet_role'>
+      <component modifies="display_preferences:webtop/config/display_preferences_ex_component.xml">
+      <replace path="preferences.display_docbase_types">
+            <display_docbase_types>
+               <docbase_type>
+                  <value>dm_document</value>
+                  <label><nlsid>LBL_DOCUMENT</nlsid></label>
+               </docbase_type>
+               <docbase_type>
+                  <value>dm_folder</value>
+                  <label><nlsid>LBL_FOLDER</nlsid></label>
+               </docbase_type>
+               <docbase_type>
+	          	  <value>bhpb_pet_controlled_doc</value>
+	              <label>BHPB PET Controlled Document</label>
+               </docbase_type>
+            </display_docbase_types>
+     </replace>
+     </component>
+   </scope>
+</config>

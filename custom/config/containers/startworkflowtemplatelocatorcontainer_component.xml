@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version='1.0'>
+   <scope type='bhpb_pet_controlled_doc' role="pet_dco_role" >   
+   
+       <!-- locator container -->
+       <component id="startworkflowtemplatelocatorcontainer" extends="startworkflowtemplatelocatorcontainer:webcomponent/config/library/workflow/startworkflow/startworkflowtemplatelocatorcontainer_component.xml">
+
+       <!-- Component Behavior -->
+	   <class>com.bhpb.imp.wdk.webtop.workflow.pet.StartWorkflowTemplateLocatorContainer</class>
+	   <nlsbundle>workflow.pet.StartWorkflowNlsProp</nlsbundle>
+      </component>
+   </scope>
+</config>

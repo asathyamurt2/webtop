@@ -1,0 +1,17 @@
+<config version='1.0'> 
+    <scope>
+      <!-- this container is extended as the heading and subheading labels cannot
+      be modified from the component on the first page of the wizard.  Subsequent
+      pages can be modified from the component successfully (weird!)-->
+      <component id="transmittalwizardcontainer" extends="wizardcontainer:wdk/config/wizardcontainer_component.xml">
+       	<desc>
+			Customised wizard container to allow heading and subheading fields
+			to be populated on the first page of the wizard.
+       	 </desc>
+       	 <pages>
+            <start>/custom/library/transmittal/pet/transmittalWizardContainer.jsp</start>
+         </pages>
+         <class>com.bhpb.imp.wdk.webtop.transmittal.pet.TransmittalWizardContainer</class>     
+      </component>
+   </scope>
+</config>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <!-- custom action component container class to allow DCOs to manipulate lifecyles on 
+ documents where they are not the owner of the document 
+(promote, demote, suspend, resume and detach handled in action execution classes) -->
+<config version='1.0'>
+       	<scope type="bhpb_pet_controlled_doc" role="pet_dco_role">
+      
+      <!-- applylifecycle container component definition -->
+      <component id="applylifecycle" extends="applylifecycle:webcomponent/config/library/applylifecycle/applylifecyclecontainer_component.xml">
+
+         <!-- class>com.documentum.webcomponent.library.applylifecycle.ApplyLifecycleContainer</class-->
+         <class>com.bhpb.imp.wdk.webtop.applylifecycle.pet.ApplyLifecycleContainer</class>
+
+      </component>
+
+   </scope>
+</config>
+

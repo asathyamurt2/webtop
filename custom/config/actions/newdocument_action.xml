@@ -1,0 +1,36 @@
+<config version='1.0'>
+   <scope type="dm_folder">
+      <!-- New Document action -->
+      <action id="newdocument" extends="newdocument:webcomponent/config/actions/dm_folder_actions.xml">
+         <execution class="com.bhpb.imp.wdk.webtop.execution.pet.LaunchCreateComponentWithPermitCheck">
+		   <permit>folder_link_permit</permit>
+            <dynamicfilter class="com.documentum.web.contentxfer.ContentTransferLaunchComponentFilter">
+               <option>
+                  <criteria>
+                     <criterion name="contenttransfer" value="ucf"/>
+                  </criteria>
+                  <selection>
+                     <component>newdocument</component>
+                     <container>newdoccontainer</container>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name="contenttransfer" value="http"/>
+                  </criteria>
+                  <selection>
+                     <component>newdocument</component>
+                     <container>newhttpdoccontainer</container>
+                  </selection>
+               </option>
+            </dynamicfilter>
+         </execution>
+		 <invocation>
+            <modalpopup>
+               <windowsize>properties</windowsize>
+               <refreshparentwindow>onok</refreshparentwindow>
+            </modalpopup>
+         </invocation>
+      </action>
+     </scope>
+ </config>

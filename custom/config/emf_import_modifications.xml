@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+     <scope>
+     	<component modifies="emfimport:webcomponent/config/library/contenttransfer/importcontent/messagearchive/emf_import_component.xml">
+     		<replace path='class'>
+     			<class>com.bhpb.imp.wdk.webtop.importcontent.MessageArchiveImport</class>
+     		</replace>
+     	</component>
+     </scope>
+</config>

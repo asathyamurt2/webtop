@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope>
+      <component id="newdoccontainer" extends="newdoccontainer:webcomponent/config/library/create/newdoccontainer_component.xml">
+
+         <!-- extended to make a protected method public -->
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.create.NewDocContainer</class>
+          <pages>
+            <filter clientenv="not appintg">
+               <start>/custom/library/create/newContainer.jsp</start>
+            </filter>
+            <filter clientenv="appintg">
+               <start>/webcomponent/library/create/appIntgNewContainer.jsp</start>
+            </filter>
+         </pages>
+         <!-- modified to call newdocumentattributes componen replacing attributes component -->
+         <!-- Contained components -->
+         <contains>
+            <component requiresVisit='true'>newdocument</component>
+            <component requiresVisit='false'>newdocumentattributes</component>
+            <component requiresVisit='false'>permissions</component>
+         </contains>
+         
+      </component>
+   </scope>
+
+</config>

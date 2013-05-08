@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+
+<!--***********************************************************************-->
+<!--                                                                       -->
+<!-- Confidential Property of Cimmetry Systems Inc.                        -->
+<!-- (c) Copyright Cimmetry Systems Inc Inc. 2002.                         -->
+<!-- All Rights reserved.                                                  -->
+<!-- May not be used without prior written agreement                       -->
+<!-- signed by a Cimmetry corporate officer.                               -->
+<!--                                                                       -->
+<!--***********************************************************************-->
+<!--                                                                       -->
+<!-- Project        Vuelink for Documentum                                 -->
+<!-- Module         AutoVue                                                -->
+<!-- File           autovue_component.xml                                  -->
+<!-- Description    AutoVue Component Definition                           -->
+<!-- Created by     Xueqing Han (xueqing@cimmetry.com)                     -->
+<!-- Created on     November 6 2002                                        -->
+<!-- Updated on     June 14 2004                                           -->
+<!--                                                                       -->
+<!--***********************************************************************-->
+
+
+<config  version='1.0'>
+  <scope type="dm_document" docbase="lba_production,PET_WALES,DEV_HOU_01">
+      
+      <!-- component definition -->
+      <component id="autovue">
+         
+         <!-- Component Contract -->
+         <params>
+            <param name="objectId" required="true"></param>
+            <param name="contentType" required="false"></param>
+         </params>
+
+         <!-- Component Layout -->
+         <pages>
+               <start>/custom/autovue/csiAutoVue4webtop.jsp</start>
+         </pages>
+         
+         <!-- Component Behavior -->
+         <class>com.documentum.web.formext.component.Component</class>
+
+         <!-- Component specific Configuration -->
+         <helpcontextid>autovue</helpcontextid>
+
+         <!-- If this component supports failover/replication, the failoverenabled needs to be set to true-->
+         <failoverenabled>false</failoverenabled>
+      </component>
+      
+   </scope>
+
+   <scope type="dmr_content" docbase="lba_production,PET_WALES,DEV_HOU_01">
+      
+      <!-- component definition -->
+      <component id="autovue">
+         
+         <!-- Component Contract -->
+         <params>
+            <param name="objectId" required="true"></param>
+            <param name="contentType" required="false"></param>
+         </params>
+
+         <!-- Component Layout -->
+         <pages>
+               <start>/custom/autovue/csiAutoVue4webtop.jsp</start>
+         </pages>
+         
+         <!-- Component Behavior -->
+         <class>com.documentum.web.formext.component.Component</class>
+
+         <!-- Component specific Configuration -->
+         <helpcontextid>autovue</helpcontextid>
+
+         <!-- If this component supports failover/replication, the failoverenabled needs to be set to true-->
+         <failoverenabled>false</failoverenabled>
+
+      </component>
+      
+   </scope>
+</config>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope docbaselist="bhpb_types_available" role="pet_dco_role">
+   
+      <!--  component definition -->
+      <component id="assigntagnumber">
+      
+		 <!-- Description (not NLS'd) -->
+	 <desc>Assigns tag no to bhpb_pet_controlled_doc objects
+	 </desc>
+         <pages>
+         	<start>/custom/library/docnumber/pet/assignTagNumber.jsp</start>
+         </pages>
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.docnumber.pet.AssignTagNumber</class>
+         <nlsbundle>docnumber.pet.AssignTagNumberNlsProp</nlsbundle>
+ 
+      </component>
+	</scope>
+</config>

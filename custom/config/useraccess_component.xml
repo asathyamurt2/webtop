@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+  <scope>
+      <component id="useraccess">
+
+         <!-- Description (not NLS'd) -->
+         <desc>
+            Permissions component:  Display ACL with group permission and users belonging to group
+         </desc>
+
+         <!-- Component Contract -->
+         <params>
+            <param name="objectId" required="true"></param>
+         </params>
+
+         <!-- Component Layouts -->
+         <pages>
+            <start>/custom/library/useraccess/useraccess.jsp</start>
+         </pages>
+
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.common.properties.UserAccess</class>
+         <nlsbundle>properties.UserAccessNlsProp</nlsbundle>
+
+         <!-- If this component supports failover/replication, the failoverenabled needs to be set to true-->
+         <failoverenabled>true</failoverenabled>
+
+         <!-- Component specific Configuration -->
+         <helpcontextid>permissions</helpcontextid>
+
+         <!-- Backup Component Id for Docbase 5.3 below -->
+         <nomaclsupport>nomaclsupport_permissions</nomaclsupport>
+      </component>
+  </scope>
+</config>

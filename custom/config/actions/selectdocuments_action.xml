@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+  <scope docbaselist="bhpb_types_available" role="pet_dco_role">
+
+      <action id="selectdocuments">     
+      <params>
+      	<param name='selectedobjectids' required='false'/>
+      	</params>
+         <execution class="com.documentum.web.formext.action.LaunchComponent">
+         
+         <arguments>
+			<argument name='multiselect' value='true'/>
+			
+		</arguments>
+            <container>petcontrolleddoclocatorcontainer</container>
+            <component>petcontrolleddoclocator</component>
+            
+
+          </execution>
+      </action>
+
+   </scope>  
+</config>

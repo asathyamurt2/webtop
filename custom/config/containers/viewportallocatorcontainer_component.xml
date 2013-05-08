@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version="1.0">
+   <scope>
+      <component id="viewportallocatorcontainer" extends="sendlocatorcontainer:webcomponent/config/library/sendlocator/sendlocatorcontainer_component.xml">
+
+         <params>
+            <param name="component" required="true"/>
+            <param name="componentArgs" required="true"/>
+         </params>
+         <class>com.bhpb.imp.wdk.webtop.sendlocator.ViewPortalLocatorContainer</class>
+         
+         <pages>
+            <start>/custom/library/viewlocator/viewlocatorcontainer.jsp</start>
+         </pages>
+	</component>
+   </scope>
+</config>

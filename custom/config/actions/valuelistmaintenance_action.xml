@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+  <scope docbaselist="bhpb_types_available" role="edit_registered_tables">
+
+      <action id="valuelistmaintenance">        
+         <execution class="com.documentum.web.formext.action.LaunchComponent">
+            <container>wizardcontainer</container>
+            <component>valuelistmaintenance</component>
+
+          </execution>
+      </action>
+
+   </scope>  
+</config>

@@ -1,0 +1,21 @@
+
+<config version="1.0">
+	<scope type="bhpb_pet_controlled_doc" docbase="PET_HOU">
+      <component id="checkin" extends="checkin:webcomponent/config/library/contenttransfer/checkin/checkin_component.xml">
+         <pages>
+            <start>/custom/library/checkin/checkin_hou.jsp</start>
+         </pages>
+<nlsbundle>checkin.CheckinNlsProp_hou</nlsbundle>
+<class>com.bhpb.imp.controldoc.checkincomp.BhpbControlldocCheckinHou</class>
+      </component>
+   </scope>
+   <scope type="bhpb_pet_controlled_doc" docbase="PET_PER">
+      <component id="checkin" extends="checkin:webcomponent/config/library/contenttransfer/checkin/checkin_component.xml">
+         <pages>
+            <start>/custom/library/checkin/checkin.jsp</start>
+         </pages>
+<nlsbundle>checkin.CheckinNlsProp</nlsbundle>
+<class>com.bhpb.imp.controldoc.checkincomp.BhpbControlldocCheckin</class>
+      </component>
+   </scope>
+</config>

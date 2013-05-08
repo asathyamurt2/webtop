@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version='1.0'>
+	<scope type="dm_document" docbase="PET_WALES,lba_production,DEV_HOU_01">
+	<!-- 	<action id="submitforcategorization"
+			extends="submitforcategorization:webcomponent/config/actions/dm_document_actions.xml" />
+		<action id="newrelation"
+			extends="newrelation:webcomponent/config/actions/dm_document_actions.xml" />
+			-->
+		<actionlist
+			modifies="default:webcomponent/config/actions/dm_sysobject_actions.xml">
+			<insertbefore path="action[id=checkout]">
+				<action id="autovue" nlsid="MSG_AUTOVUE" />
+			</insertbefore>
+			<insertbefore path="moreactionsmenu.menu[id=file].action[id=saveasxforms]">
+				<action id="autovue" nlsid="MSG_AUTOVUE" />
+			</insertbefore>
+		</actionlist>
+		
+	
+	<menuconfig
+		modifies="context-menu:webcomponent/config/actions/dm_sysobject_actions.xml">
+		<insertbefore path="actionmenuitem[action=checkout]">
+			<actionmenuitem dynamic="singleselect" action="autovue"
+				nlsid="MSG_AUTOVUE" showifdisabled="false" showifinvalid="false" />
+		</insertbefore>
+	</menuconfig>
+
+	
+		
+		
+	</scope>
+</config>

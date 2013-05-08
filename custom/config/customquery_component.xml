@@ -1,0 +1,15 @@
+<config version="1.0">
+   <scope>
+      <component id="customquery" extends="dql:webcomponent/config/admin/utilities/dql_component.xml">
+         <desc>
+            The dql component edits and executes queries to a repository. This 
+            component is nested to from the Webtop about component. 
+         </desc>
+         <pages>
+            <start>/custom/library/customquery/dqleditor.jsp</start>
+         </pages>
+         <class>com.bhpb.imp.wdk.webtop.dql.CustomQuery</class>
+         <nlsbundle>customquery.CustomQueryNlsProp</nlsbundle>
+      </component>
+   </scope>
+</config>

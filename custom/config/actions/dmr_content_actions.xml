@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version='1.0'>
+	<scope type="dmr_content" docbase="PET_WALES,lba_production,DEV_HOU_01">
+		<actionlist
+			modifies="default:/webcomponent/config/actions/dmr_content_actions.xml">
+			<insertbefore path="action[id=delete]">
+				<action id="autovue" nlsid="MSG_AUTOVUE" />
+			</insertbefore>
+		</actionlist>
+
+		<menuconfig
+			modifies="context-menu:/webcomponent/config/actions/dmr_content_actions.xml">
+			<insertbefore path="actionmenuitem[action=exportrendition]">
+				<actionmenuitem dynamic="singleselect" action="autovue"
+					nlsid="MSG_AUTOVUE" showifdisabled="false" showifinvalid="false" />
+			</insertbefore>
+		</menuconfig>
+	
+	</scope>
+</config>

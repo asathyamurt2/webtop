@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+
+   <scope type="dm_workflow" role="pet_dco_role">
+	<action id="abortworkflow" extends="abortworkflow:webcomponent\config\actions\dm_workflow_actions.xml">
+         
+       	  <preconditions>
+         	   <precondition class="com.bhpb.imp.wdk.webtop.workflow.pet.AbortWorkflowPrecondition"/>
+       	  </preconditions>
+   
+      </action>
+   </scope>
+       
+</config>

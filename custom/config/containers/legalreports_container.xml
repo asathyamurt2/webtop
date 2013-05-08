@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope docbaselist="legal_docbases">
+
+      <component id="legalreportcontainer" extends="dialogcontainer:wdk/config/dialogcontainer_component.xml">
+      	 
+      	 <desc>Custom dialog container which is used to load legalreport components.</desc>
+      	 
+	 <class>com.bhpb.imp.wdk.webtop.report.legal.LegalReportContainer</class> 
+
+	 <helpcontextid>legalreportcontainer</helpcontextid>
+
+	</component>
+  </scope>
+</config>
+	

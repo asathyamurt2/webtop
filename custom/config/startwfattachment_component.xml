@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope>
+   
+         <desc>
+            This component is part of the start workflow component. It manages 
+            the attachment information during the workflow initialization process.
+         </desc>
+   
+      	<component id="startwfattachment" extends="startwfattachment:webcomponent/config/library/workflow/attachment/startwfattachment_component.xml">
+        	 <class>com.bhpb.imp.wdk.webtop.workflow.pet.StartAttachment</class>
+      	   	 <nlsbundle>workflow.pet.AttachmentNlsProp</nlsbundle>
+        </component>
+
+   </scope>
+   
+</config>

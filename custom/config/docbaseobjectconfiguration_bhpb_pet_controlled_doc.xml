@@ -1,0 +1,41 @@
+<config version='1.0'>
+   <scope type="bhpb_pet_controlled_doc" docbase="PET_HOU,PET_PER">
+ 	<!-- using id=import does not appear to work... -->
+      <docbaseobjectconfiguration id='attributes' extends="attributes:webcomponent/config/library/docbaseobjectconfiguration_dm_sysobject.xml">
+         <names>
+              <!-- Apply custom behavior to the 'doc_number_base' attribute -->
+            <attribute name='bhpb_pet_document_no_base'>
+                <!-- valuehandler>com.bhpb.imp.wdk.webtop.valuehandler.pet.DocumentNumberBase</valuehandler-->
+                <editcomponent>editdocnumberbase</editcomponent>
+            </attribute>
+            <!-- attribute name='bhpb_pet_document_no_format'>
+                <valuehandler>com.bhpb.imp.wdk.webtop.valuehandler.pet.DocumentNumberFormat</valuehandler>
+                <valueformatter>com.bhpb.imp.wdk.webtop.valueformatter.pet.DocumentNumberFormat</valueformatter>
+            </attribute-->
+ <attribute name='bhpb_pet_requestor_comments'>
+<valuetagclass>com.bhpb.imp.controldoc.importcomp.textAreaValueTag
+</valuetagclass>
+<lines>5</lines>
+ </attribute>
+         </names>
+      </docbaseobjectconfiguration>
+
+   </scope>
+   <scope type="bhpb_pet_controlled_doc">
+ 	<!-- using id=import does not appear to work... -->
+      <docbaseobjectconfiguration id='attributes' extends="attributes:webcomponent/config/library/docbaseobjectconfiguration_dm_sysobject.xml">
+         <names>
+              <!-- Apply custom behavior to the 'doc_number_base' attribute -->
+            <attribute name='bhpb_pet_document_no_base'>
+                <!-- valuehandler>com.bhpb.imp.wdk.webtop.valuehandler.pet.DocumentNumberBase</valuehandler-->
+                <editcomponent>editdocnumberbase</editcomponent>
+            </attribute>
+            <!-- attribute name='bhpb_pet_document_no_format'>
+                <valuehandler>com.bhpb.imp.wdk.webtop.valuehandler.pet.DocumentNumberFormat</valuehandler>
+                <valueformatter>com.bhpb.imp.wdk.webtop.valueformatter.pet.DocumentNumberFormat</valueformatter>
+            </attribute-->
+         </names>
+      </docbaseobjectconfiguration>
+
+   </scope>
+</config>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope docbaselist="bhpb_types_available" type="dm_task">
+   
+      <!-- change workflow performer component -->
+      <component id="changeperformer" extends="changeperformer:webcomponent\config\library\workflow\performers\changeperformer_component.xml">
+      
+         <!-- Description (not NLS'd) -->
+         <desc>
+            You can use the changeperformer component to change the performers of a future task.
+         </desc>
+     	
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.common.changeperformer.ChangePerformer</class>
+         <nlsbundle>workflow.ChangePerformerNlsProp</nlsbundle>
+      </component>
+   </scope>
+</config>

@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--***********************************************************************-->
+<!--                                                                       -->
+<!-- Project        Component Library                                      -->
+<!-- Module         Home Cabinet Classic                                   -->
+<!-- File           homecabinet_classic_component.xml                      -->
+<!-- Description    Home Cabinet Classic View Component Definition         -->
+<!--                                                                       -->
+<!--***********************************************************************-->
+
+<config version='1.0'>
+ 
+<scope docbaselist="legal_docbases">
+   
+      <!-- the object list component definition -->
+      <component id="homecabinet_classic" extends="homecabinet_classic:webtop/config/homecabinet_classic_component.xml">
+         
+         <!-- Description (not NLS'd) -->
+          <desc>
+            This is for Leagal Email View Component and this configuration XML file provides some
+         	additional functionality when we select this view in the dropdown box from the 
+            Home Cabinet Classic View
+         </desc>
+         
+        <!-- Component Behavior --> 
+        <class>com.bhpb.imp.wdk.common.navigation.HomeCabinetClassicView</class>
+        <nlsbundle>navigation.HomeCabinetListNlsProp</nlsbundle>
+		
+		
+		 <!-- show object type filters drop-down control -->
+         <showfilters>true</showfilters>
+         
+         <objectfilters>
+            
+            <!-- show all folders and documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+            
+            <!-- show only the documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+            
+            <!-- show only the folders list -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type></type>
+            </objectfilter>
+            
+            <!-- show folders and all objects -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_ALL</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_sysobject</type>
+               <showallversions>true</showallversions>
+            </objectfilter>
+            
+            <!-- show only Email Messages -->
+            <objectfilter>
+               <label><nlsid>MSG_EMAIL_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>legal_mail_message</type>
+            </objectfilter>
+            
+	</objectfilters>
+            
+         <filtermapping id="Email View">
+         	<column id="object_name">MSG_NAME</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+            <column id="receive_date">MSG_RECEIVED_DATE</column>
+            <column id="to_addr">MSG_RECIPIENTS</column>
+            <column id="sent_date">MSG_DATE_PUBLISHED</column>
+         </filtermapping>
+                       
+                                    
+      </component>
+      
+   </scope>
+ 
+   
+    <scope docbaselist="bhpb_types_available">
+   
+     <component id="homecabinet_classic" extends="homecabinet_classic:webtop/config/homecabinet_classic_component.xml">
+
+         
+         <!-- Description (not NLS'd) -->
+         <desc>
+         	PET Views
+         </desc>
+         
+        <!-- Component Behavior --> 
+         <class>com.bhpb.imp.wdk.common.navigation.HomeCabinetClassicView</class>
+        <nlsbundle>navigation.HomeCabinetListNlsProp</nlsbundle>
+	         
+	     <pages>
+            <start>/custom/library/navigation/homecabinet_classic.jsp</start>
+            <thumbnail>/webtop/classic/homecabinet/homecabinet_thumbnail.jsp</thumbnail>
+         </pages>	
+		
+		 <!-- show object type filters drop-down control -->
+         <showfilters>true</showfilters>
+         
+         <objectfilters>
+
+            <!-- show all folders and documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the folders list -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type></type>
+            </objectfilter>
+
+            <!-- show folders and all objects -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_ALL</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_sysobject</type>
+               <showallversions>true</showallversions>
+            </objectfilter>
+            
+            <!-- custom filters -->
+            <objectfilter>
+               <label><nlsid>MSG_ENG_DOCS</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_SUMMARY_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_DETAILED_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_BHPB_EMAIL_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_message_archive</type>
+            </objectfilter>
+            
+	</objectfilters>
+            
+         <filtermapping id='Engineering_Documents'>
+         	<column id="object_name">MSG_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="bhpb_pet_doc_function">MSG_DOC_FUNCTION</column>
+            <column id="bhpb_pet_purpose">MSG_PURPOSE</column>
+            <column id="r_current_state">MSG_CURRENT_STATE</column>
+            <column id="bhpb_pet_bhpbrev_date">MSG_BHPB_REV_DATE</column>
+            <column id="bhpb_pet_bhpbrev_no">MSG_BHPB_REV_NO</column>
+            <column id="bhpb_pet_vendor_name">MSG_VENDOR_NAME</column>
+            <column id="bhpb_pet_vendordoc">MSG_VENDOR_DOC_NO</column>
+            <column id="bhpb_pet_contractor">MSG_CONTRACTOR</column>
+         </filtermapping>
+                       
+         <filtermapping id='Summary_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+         </filtermapping>
+ 
+          <filtermapping id='Detailed_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_creation_date">MSG_CREATION_DATE</column>
+            <column id="r_creator_name">MSG_CREATOR_NAME</column>
+            <column id="r_lock_date">MSG_LOCK_DATE</column>
+            <column id="log_entry">MSG_USER_COMMENTS</column>
+         </filtermapping>
+                                                                    
+          <filtermapping id="BHPB_Email_View">
+         	<column id="object_name">MSG_NAME</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+            <column id="receive_date">MSG_RECEIVED_DATE</column>
+            <column id="message_subject">MSG_SUBJECT</column>
+         </filtermapping>             
+                       
+                                    
+      </component>
+      
+   </scope>
+   
+   <scope docbaselist="edt_pak_docbases">
+      
+      <component id="homecabinet_classic" extends="homecabinet_classic:webtop/config/homecabinet_classic_component.xml">
+
+         
+         <!-- Description (not NLS'd) -->
+         <desc>
+         	PET Views
+         </desc>
+         
+        <!-- Component Behavior --> 
+ 		<class>com.bhpb.imp.wdk.common.navigation.HomeCabinetClassicView</class>
+        <nlsbundle>navigation.HomeCabinetListNlsProp</nlsbundle>
+
+	     <pages>
+            <start>/custom/library/navigation/homecabinet_classic.jsp</start>
+            <thumbnail>/webtop/classic/homecabinet/homecabinet_thumbnail.jsp</thumbnail>
+         </pages>			
+		
+		 <!-- show object type filters drop-down control -->
+         <showfilters>true</showfilters>
+         
+         <objectfilters>
+
+            <!-- show all folders and documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the folders list -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type></type>
+            </objectfilter>
+
+            <!-- show folders and all objects -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_ALL</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_sysobject</type>
+               <showallversions>true</showallversions>
+            </objectfilter>
+            
+            <!-- custom filters -->
+            <objectfilter>
+               <label><nlsid>MSG_ENG_DOCS</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhp_complex</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_SUMMARY_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhp_complex</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_DETAILED_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhp_complex</type>
+            </objectfilter>
+            
+	</objectfilters>
+            
+         <filtermapping id='Engineering_Documents'>
+         	<column id="object_name">MSG_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="adoc_function">MSG_DOC_FUNCTION</column>
+            <column id="purpose">MSG_PURPOSE</column>
+            <column id="r_current_state">MSG_CURRENT_STATE</column>
+            <column id="bhpbrev_date">MSG_BHPB_REV_DATE</column>
+            <column id="bhpbrev_no">MSG_BHPB_REV_NO</column>
+            <column id="evendor_name">MSG_VENDOR_NAME</column>
+            <column id="aendordoc">MSG_VENDOR_DOC_NO</column>
+            <column id="hcontractor">MSG_CONTRACTOR</column>
+         </filtermapping>
+                       
+         <filtermapping id='Summary_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+         </filtermapping>
+ 
+          <filtermapping id='Detailed_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_creation_date">MSG_CREATION_DATE</column>
+            <column id="r_creator_name">MSG_CREATOR_NAME</column>
+            <column id="r_lock_date">MSG_LOCK_DATE</column>
+            <column id="log_entry">MSG_USER_COMMENTS</column>
+         </filtermapping>
+                                                                    
+                       
+                       
+                                    
+      </component>
+      
+   </scope>
+      
+      <scope docbaselist="edt_lba_docbases">
+   
+     <component id="homecabinet_classic" extends="homecabinet_classic:webtop/config/homecabinet_classic_component.xml">
+
+         
+         <!-- Description (not NLS'd) -->
+         <desc>
+         	PET Views
+         </desc>
+         
+        <!-- Component Behavior --> 
+        <class>com.bhpb.imp.wdk.common.navigation.HomeCabinetClassicView</class>
+        <nlsbundle>navigation.HomeCabinetListNlsProp</nlsbundle>
+		
+	     <pages>
+            <start>/custom/library/navigation/homecabinet_classic.jsp</start>
+            <thumbnail>/webtop/classic/homecabinet/homecabinet_thumbnail.jsp</thumbnail>
+         </pages>	
+         		
+		 <!-- show object type filters drop-down control -->
+         <showfilters>true</showfilters>
+         
+         <objectfilters>
+
+            <!-- show all folders and documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the folders list -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type></type>
+            </objectfilter>
+
+            <!-- show folders and all objects -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_ALL</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_sysobject</type>
+               <showallversions>true</showallversions>
+            </objectfilter>
+            
+            <!-- custom filters -->
+            <objectfilter>
+               <label><nlsid>MSG_ENG_DOCS</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhp_complex</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_SUMMARY_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhp_complex</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_DETAILED_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhp_complex</type>
+            </objectfilter>
+            
+	</objectfilters>
+            
+         <filtermapping id='Engineering_Documents'>
+         	<column id="object_name">MSG_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="adoc_function">MSG_DOC_FUNCTION</column>
+            <column id="purpose">MSG_PURPOSE</column>
+            <column id="r_current_state">MSG_CURRENT_STATE</column>
+            <column id="bhpbrev_date">MSG_BHPB_REV_DATE</column>
+            <column id="bhpbrev_no">MSG_BHPB_REV_NO</column>
+            <column id="evendor_name">MSG_VENDOR_NAME</column>
+            <column id="aendordoc">MSG_VENDOR_DOC_NO</column>
+            <column id="hcontractor">MSG_CONTRACTOR</column>
+         </filtermapping>
+                       
+         <filtermapping id='Summary_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+         </filtermapping>
+ 
+          <filtermapping id='Detailed_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_creation_date">MSG_CREATION_DATE</column>
+            <column id="r_creator_name">MSG_CREATOR_NAME</column>
+            <column id="r_lock_date">MSG_LOCK_DATE</column>
+            <column id="log_entry">MSG_USER_COMMENTS</column>
+         </filtermapping>
+                                                                    
+                       
+                       
+                                    
+      </component>
+      
+   </scope>
+   
+ 
+   
+</config>

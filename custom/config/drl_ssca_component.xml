@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope>
+
+      <!-- DRL component definition -->
+      <component id="drl_ssca" extends="drl:wdk/config/drl_component.xml">
+         <params>
+            <param name='objectId' required='true'></param>
+            <param name='versionLabel' required='false'></param>
+            <param name='format' required='false'></param>
+	    <param name='status' required='false'></param>
+	    <param name='current' required='false'></param>
+         </params>
+
+         <class>com.bhpb.imp.wdk.common.web.ssca.DRLComponent</class>         
+
+      </component>
+   </scope>
+</config>
+

@@ -1,0 +1,23 @@
+<config version='1.0'>
+   <scope>
+      <!-- component definition -->
+      <component id="editdocnumberbase" > 
+     	<params>
+            <!-- objectId provides id of folder for import -->
+            <param name="objectId" required="false"/>
+         </params>
+         <desc>
+            Provides custom processing to create document number base
+            using document number format and field contents
+         </desc>
+
+         <pages>
+            <start>/custom/library/editcomponent/pet/editdocnumberbase.jsp</start>
+         </pages>
+
+		<class>com.bhpb.imp.wdk.webtop.editcomponent.pet.EditDocNumberBase</class>
+		<nlsbundle>editcomponent.pet.DocNumberBaseNlsProp</nlsbundle>
+         
+      </component>
+   </scope>
+</config>

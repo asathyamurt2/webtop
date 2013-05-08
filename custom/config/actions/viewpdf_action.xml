@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+  <scope type="bhpb_pet_controlled_doc">
+  
+		<desc>
+			The viewpdf action lets users view PDF renditions of approved Petroleum Controlled documents			
+		</desc>
+
+      <action id="viewpdf">
+		<params>		
+        	<param name="objectId" required="true"/>
+        	<!-- should the viewpdf action jump to the main component after it has finished executing -->
+        	<param name="navigateOnComplete" required="false"/>
+        	<!-- true if the viewpdf action has been invoked by the custom DRL component -->
+        	<param name="invokedFromCustomDRL" required="false"/>
+        </params>         
+         <execution class="com.bhpb.imp.wdk.webtop.viewpdf.pet.ViewPDFAction">
+            <permit>browse_permit</permit>
+            <component>viewpdf</component>
+          </execution>
+      </action> 
+   </scope>  
+</config>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version="1.0">
+	<scope>
+		<application modifies="webtop/app.xml">
+			<replace path="display.classic">
+				<classic>10</classic>
+			</replace>
+			
+			<replace path="qualifiers">
+			<qualifiers>
+				<!-- Docbase list qualifier, scope="docbaselist", context="null" -->
+            	<qualifier>com.bhpb.imp.wdk.common.config.DocbaseListQualifier</qualifier>
+			
+				<!-- Location qualifier, scope="location", context="location" -->
+	            <qualifier>com.documentum.webtop.app.ApplicationLocationQualifier</qualifier>
+	
+	            <!-- User qualifier, scope="user", context="user" -->
+	            <qualifier>com.documentum.web.formext.config.UserQualifier</qualifier>
+	
+	            <!-- Role qualifier, scope="role", context="role" -->
+	            <qualifier>com.documentum.web.formext.config.RoleQualifier</qualifier>
+	                        
+	            <!-- Docbase type qualifier, scope="type", context="objectId" | "type" -->
+	            <qualifier>com.documentum.web.formext.config.DocbaseTypeQualifier</qualifier>
+	
+	            <!-- Docbase name qualifier, scope="docbase", context="objectId" ! "docbase" -->
+	            <qualifier>com.documentum.web.formext.config.DocbaseNameQualifier</qualifier>
+	
+	            <!-- Privilege qualifier, scope="privilege", context="privilege" -->
+	            <qualifier>com.documentum.web.formext.config.PrivilegeQualifier</qualifier>
+	
+	            <!-- Client Environment qualifier, scope="clientenv", context=null -->
+	            <qualifier>com.documentum.web.formext.config.ClientEnvQualifier</qualifier>
+	
+	            <!-- Application qualifier scope="application", context=null -->
+	            <qualifier>com.documentum.web.formext.config.AppQualifier</qualifier>
+	
+	            <!-- Version qualifier, scope="version", context="preferredVersion" -->
+	            <qualifier>com.documentum.web.formext.config.VersionQualifier</qualifier>
+	
+	            <!-- Entitlement qualifier, scope="entitlement", context="entitlement" -->
+	            <qualifier>com.documentum.web.formext.config.EntitlementQualifier</qualifier>
+			</qualifiers>
+			</replace>
+			
+		</application>
+		
+		
+		
+		<application modifies="wdk/app.xml">
+			<replace path="language.supported_locales">
+				<supported_locales>
+	               <locale>en_US</locale>
+	               <locale>en_AU</locale>
+	               <locale>es_ES</locale>
+	            </supported_locales>
+			</replace>
+			<replace path="language.default_locale">
+				<default_locale>en_AU</default_locale>
+			</replace>
+			<replace path="move_operation.all_versions">
+				<all_versions>true</all_versions>
+			</replace>
+	
+			<!-- <replace path="failover.enabled">
+				<enabled>true</enabled>
+			</replace>-->
+
+			<replace path="contentxfer.accelerated-write">
+			<accelerated-write>
+               <enabled>true</enabled>
+               <bocs-write-mode>default-async</bocs-write-mode>
+               <allow-override-bocs-write-mode>true</allow-override-bocs-write-mode>
+            </accelerated-write>
+			</replace>
+			
+			<replace path="deepexport.enabled">
+				<enabled>true</enabled>
+			</replace>		
+			
+			<replace path="messageArchive-support.enabled">
+	          
+	            <enabled>true</enabled>
+	           
+			</replace>
+	
+		</application>
+
+	</scope>
+</config>

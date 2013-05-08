@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+  <scope docbaselist="bhpb_types_available" role="pet_dco_role">
+
+      <action id="assigntagnumber">        
+           <execution class="com.documentum.web.formext.action.LaunchComponent">
+            <container>dialogcontainer</container>
+            <component>assigntagnumber</component>
+
+          </execution>
+      </action>
+
+   </scope>  
+</config>

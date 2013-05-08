@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+  <scope>
+
+      <action id="customquery">        
+           <execution class="com.documentum.web.formext.action.LaunchComponent">
+           <!-- container>dialogcontainer</container-->
+            <component>customquery</component>
+          </execution>
+      </action>
+
+   </scope>  
+</config>

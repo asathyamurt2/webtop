@@ -1,0 +1,61 @@
+<config version='1.0'>
+	<scope docbase="PET_HOU">
+      <component id="newdocumentattributes" extends="attributes:webcomponent/config/library/attributes/attributes_dm_document_component.xml">
+
+		<desc>
+		This component extends attributes and displays additional
+		attribute (bhpb_pet_document_no_base) for bhpb_pet_controlled_doc types.
+		It is accessed as a contained component in the new document container.
+		</desc>
+
+         <!-- Component Layouts -->
+         <pages>
+            <start>/custom/library/create/newDocumentAttributesbhpb_pet_controlled_doc_hou.jsp</start>
+         </pages>
+
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.create.NewDocumentAttributesHou</class>
+          <nlsbundle>attributes.AttributesNlsProp_hou</nlsbundle>
+      </component>
+   </scope>
+   <scope docbase="PET_PER">
+      <component id="newdocumentattributes" extends="attributes:webcomponent/config/library/attributes/attributes_dm_document_component.xml">
+
+		<desc>
+		This component extends attributes and displays additional
+		attribute (bhpb_pet_document_no_base) for bhpb_pet_controlled_doc types.
+		It is accessed as a contained component in the new document container.
+		</desc>
+
+         <!-- Component Layouts -->
+         <pages>
+            <start>/custom/library/create/newDocumentAttributesbhpb_pet_controlled_doc.jsp</start>
+         </pages>
+
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.create.NewDocumentAttributes</class>
+          <nlsbundle>attributes.AttributesNlsProp</nlsbundle>
+      </component>
+   </scope>
+   <scope>
+      <component id="newdocumentattributes" extends="attributes:webcomponent/config/library/attributes/attributes_dm_document_component.xml">
+
+		<desc>
+		This component extends attributes and displays additional
+		attribute (bhpb_pet_document_no_base) for bhpb_pet_controlled_doc types.
+		It is accessed as a contained component in the new document container.
+		</desc>
+
+         <!-- Component Layouts -->
+         <pages>
+            <start>/custom/library/create/newDocumentAttributes.jsp</start>
+         </pages>
+
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.create.NewDocumentAttributes</class>
+          <nlsbundle>attributes.AttributesNlsProp</nlsbundle>
+      </component>
+   </scope>
+
+   
+</config>

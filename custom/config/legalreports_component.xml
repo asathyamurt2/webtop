@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope>
+   
+      <!--  component definition -->
+      <component id="folderarchivalreport">      
+	
+	<desc>Custom component which is invoked by folderarchivalreport action</desc>
+         <pages>
+         	<start>/custom/library/reports/legal/FolderArchivalReportCriteriaEntry.jsp</start>
+         </pages>
+
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.report.legal.FolderArchivalReport</class> 
+         <nlsbundle>reports.legal.FolderArchivingReportNlsProp</nlsbundle>
+         <helpcontextid>folderarchivalreport</helpcontextid>
+      </component>
+      
+      <component id="namingconventionreport">      
+      
+          <desc>Custom component which is invoked by folderarchivalreport action</desc>
+
+          <pages>
+                <start>/custom/library/reports/legal/NamingConventionlReportCriteriaEntry.jsp</start>
+          </pages>
+      
+          <!-- Component Behavior -->
+          <class>com.bhpb.imp.wdk.webtop.report.legal.NamingConventionReport</class> 
+          
+          <nlsbundle>reports.legal.NamingConventionReportNlsProp</nlsbundle>
+          
+          <helpcontextid>namingconventionreport</helpcontextid>
+      </component>
+      
+	</scope>
+	
+</config>

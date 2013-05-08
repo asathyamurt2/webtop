@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version='1.0'>
+   <scope role="pet_dco_role">
+      <component id="httpcancelcheckoutcontainer" extends="httpcancelcheckoutcontainer:webcomponent/config/library/contenttransfer/cancelcheckout/httpcancelcheckoutcontainer_component.xml">
+      
+       	 <desc>
+      	 	The Cancel Checkout Container component's behaviour class has been customised to enable users
+      	 	belonging to the Petroleum Document Control Officer role unlock documents that are checked
+      	 	out by other users.
+      	 </desc>
+      
+         <class>com.bhpb.imp.wdk.webtop.cancelcheckout.CancelCheckoutContainer</class>
+      </component>
+   </scope>
+</config>

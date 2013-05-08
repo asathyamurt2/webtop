@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   
+ 
+  
+ 
+      <!-- START PET - Default to Petrolum type for pet users  -->
+      <scope docbaselist="bhpb_pet_docbases" role="pet_role">
+      
+      <!-- the document list component definition -->
+      <component id="newdocument" extends="newdocument:webcomponent/config/library/create/newdocument_component.xml">
+                 
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewDocument</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewDocument</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewDocumentNlsProp</nlsbundle>
+             
+         <!-- default settings to use for type/format/template combos when launching the newdocument component -->
+         <combo_defaults>
+            <!-- base type for types to show in the type combo -->
+            <!-- Accepted values: dm_sysobject or its sub types -->
+            <base_type>dm_document</base_type>			
+
+			<!--  Filter default type list with the below -->
+			<base_doc_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='false'>bhpb_document</object_type>
+				<object_type cascade='true'>bhpb_mail_message</object_type>
+				<object_type cascade='true'>bhpb_message_archive</object_type>
+				<object_type cascade='true'>bhpb_pet_document</object_type>
+			</base_doc_types>
+			<exclude_doc_types>
+				<object_type cascade='true'>bhpb_cann_document</object_type>
+				<object_type cascade='true'>bhpb_cann_mail_message</object_type>
+				<object_type cascade='true'>bhpb_ssca_ctrl_doc</object_type>
+				<object_type cascade='true'>bhpb_ssm_tech_email</object_type>
+				<object_type cascade='true'>bhpb_gld_controlled_doc</object_type>
+				<object_type cascade='true'>bhpb_bld_controlled_doc</object_type>
+				<object_type cascade='true'>bhpb_bcd_controlled_doc</object_type>
+			</exclude_doc_types>
+			
+            <!-- default selected type to show in the type combo:  -->
+            <!-- Accepted values: <base_type> value or its sub types -->
+            <type>bhpb_pet_document</type>
+            <!-- default selected format to show in the format combo: -->
+            <!-- make sure a document with this format is available in the /Templates cabinet or its folders -->
+            <!-- Accepted values: 'name' attribute values from dm_format object -->
+            <format>msw8</format>                       
+         </combo_defaults>
+         
+      </component>
+      </scope>
+      
+      
+      <scope docbaselist="bhpb_pet_docbases" role="pet_dco_role">
+      
+      <!-- the document list component definition -->
+      <component id="newdocument" extends="newdocument:webcomponent/config/library/create/newdocument_component.xml">
+                 
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewDocument</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewDocument</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewDocumentNlsProp</nlsbundle>
+             
+         <!-- default settings to use for type/format/template combos when launching the newdocument component -->
+         <combo_defaults>
+            <!-- base type for types to show in the type combo -->
+            <!-- Accepted values: dm_sysobject or its sub types -->
+            <base_type>dm_document</base_type>			
+
+			<!--  Filter default type list with the below -->
+			<base_doc_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='false'>bhpb_document</object_type>
+				<object_type cascade='true'>bhpb_mail_message</object_type>
+				<object_type cascade='true'>bhpb_message_archive</object_type>
+				<object_type cascade='true'>bhpb_pet_document</object_type>
+			</base_doc_types>
+			<exclude_doc_types>
+				<object_type cascade='true'>bhpb_cann_document</object_type>
+				<object_type cascade='true'>bhpb_cann_mail_message</object_type>
+				<object_type cascade='true'>bhpb_ssca_ctrl_doc</object_type>
+				<object_type cascade='true'>bhpb_ssm_tech_email</object_type>
+				<object_type cascade='true'>bhpb_gld_controlled_doc</object_type>
+				<object_type cascade='true'>bhpb_bld_controlled_doc</object_type>
+				<object_type cascade='true'>bhpb_bcd_controlled_doc</object_type>
+			</exclude_doc_types>
+			
+            <!-- default selected type to show in the type combo:  -->
+            <!-- Accepted values: <base_type> value or its sub types -->
+            <type>bhpb_pet_controlled_doc</type>
+            <!-- default selected format to show in the format combo: -->
+            <!-- make sure a document with this format is available in the /Templates cabinet or its folders -->
+            <!-- Accepted values: 'name' attribute values from dm_format object -->
+            <format>msw8</format>                       
+         </combo_defaults>
+         
+      </component>
+      </scope>
+      
+       <scope docbaselist="bhpb_wales_docbases">
+      
+      <!-- the document list component definition -->
+      <component id="newdocument" extends="newdocument:webcomponent/config/library/create/newdocument_component.xml">
+                 
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewDocument</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewDocument</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewDocumentNlsProp</nlsbundle>
+             
+         <!-- default settings to use for type/format/template combos when launching the newdocument component -->
+         <combo_defaults>
+            <!-- base type for types to show in the type combo -->
+            <!-- Accepted values: dm_sysobject or its sub types -->
+            <base_type>dm_document</base_type>			
+
+			<!--  Filter default type list with the below -->
+			<base_doc_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='false'>bhpb_document</object_type>
+				<object_type cascade='false'>dm_document</object_type>
+				<object_type cascade='true'>bhpb_mail_message</object_type>
+				<object_type cascade='true'>bhpb_message_archive</object_type>
+				<object_type cascade='true'>bhpb_pet_document</object_type>
+			</base_doc_types>
+			<exclude_doc_types>
+				<object_type cascade='true'>bhpb_cann_document</object_type>
+				<object_type cascade='true'>bhpb_cann_mail_message</object_type>
+				<object_type cascade='true'>bhpb_ssca_ctrl_doc</object_type>
+				<object_type cascade='true'>bhpb_ssm_tech_email</object_type>
+				<object_type cascade='true'>bhpb_gld_controlled_doc</object_type>
+				<object_type cascade='true'>bhpb_bld_controlled_doc</object_type>
+				<object_type cascade='true'>bhpb_bcd_controlled_doc</object_type>
+			</exclude_doc_types>
+			
+            <!-- default selected type to show in the type combo:  -->
+            <!-- Accepted values: <base_type> value or its sub types -->
+            <type>bhpb_pet_document</type>
+            <!-- default selected format to show in the format combo: -->
+            <!-- make sure a document with this format is available in the /Templates cabinet or its folders -->
+            <!-- Accepted values: 'name' attribute values from dm_format object -->
+            <format>msw8</format>                       
+         </combo_defaults>
+         
+      </component>
+      </scope>
+      
+      
+      <scope docbaselist="bhpb_wales_docbases" role='pet_dco_role'>
+      
+      <!-- the document list component definition -->
+      <component id="newdocument" extends="newdocument:webcomponent/config/library/create/newdocument_component.xml">
+                 
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewDocument</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewDocument</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewDocumentNlsProp</nlsbundle>
+             
+         <!-- default settings to use for type/format/template combos when launching the newdocument component -->
+         <combo_defaults>
+            <!-- base type for types to show in the type combo -->
+            <!-- Accepted values: dm_sysobject or its sub types -->
+            <base_type>dm_document</base_type>			
+
+			<!--  Filter default type list with the below -->
+			<base_doc_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='false'>bhpb_document</object_type>
+				<object_type cascade='false'>dm_document</object_type>
+				<object_type cascade='true'>bhpb_mail_message</object_type>
+				<object_type cascade='true'>bhpb_message_archive</object_type>
+				<object_type cascade='true'>bhpb_pet_document</object_type>
+			</base_doc_types>
+			<exclude_doc_types>
+				<object_type cascade='true'>bhpb_cann_document</object_type>
+				<object_type cascade='true'>bhpb_cann_mail_message</object_type>
+				<object_type cascade='true'>bhpb_ssca_ctrl_doc</object_type>
+				<object_type cascade='true'>bhpb_ssm_tech_email</object_type>
+				<object_type cascade='true'>bhpb_gld_controlled_doc</object_type>
+				<object_type cascade='true'>bhpb_bld_controlled_doc</object_type>
+				<object_type cascade='true'>bhpb_bcd_controlled_doc</object_type>
+			</exclude_doc_types>
+			
+            <!-- default selected type to show in the type combo:  -->
+            <!-- Accepted values: <base_type> value or its sub types -->
+            <type>bhpb_pet_controlled_doc</type>
+            <!-- default selected format to show in the format combo: -->
+            <!-- make sure a document with this format is available in the /Templates cabinet or its folders -->
+            <!-- Accepted values: 'name' attribute values from dm_format object -->
+            <format>msw8</format>                       
+         </combo_defaults>
+         
+      </component>
+      </scope>
+      
+      <scope docbaselist="edt_lba_docbases">
+      
+      <!-- the document list component definition -->
+      <component id="newdocument" extends="newdocument:webcomponent/config/library/create/newdocument_component.xml">
+                 
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewDocument</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewDocument</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewDocumentNlsProp</nlsbundle>
+             
+         <!-- default settings to use for type/format/template combos when launching the newdocument component -->
+         <combo_defaults>
+            <!-- base type for types to show in the type combo -->
+            <!-- Accepted values: dm_sysobject or its sub types -->
+            <base_type>dm_document</base_type>			
+
+			<!--  Filter default type list with the below -->
+			<base_doc_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='true'>dm_document</object_type>
+
+			</base_doc_types>
+			<exclude_doc_types>
+			</exclude_doc_types>
+			
+            <!-- default selected type to show in the type combo:  -->
+            <!-- Accepted values: <base_type> value or its sub types -->
+            <type>dm_document</type>
+            <!-- default selected format to show in the format combo: -->
+            <!-- make sure a document with this format is available in the /Templates cabinet or its folders -->
+            <!-- Accepted values: 'name' attribute values from dm_format object -->
+            <format>msw8</format>                       
+         </combo_defaults>
+         
+      </component>
+      </scope>
+      
+           <scope docbaselist="edt_pak_docbases">
+      
+      <!-- the document list component definition -->
+      <component id="newdocument" extends="newdocument:webcomponent/config/library/create/newdocument_component.xml">
+                 
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewDocument</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewDocument</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewDocumentNlsProp</nlsbundle>
+             
+         <!-- default settings to use for type/format/template combos when launching the newdocument component -->
+         <combo_defaults>
+            <!-- base type for types to show in the type combo -->
+            <!-- Accepted values: dm_sysobject or its sub types -->
+            <base_type>dm_document</base_type>			
+
+			<!--  Filter default type list with the below -->
+			<base_doc_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='true'>dm_document</object_type>
+
+			</base_doc_types>
+			<exclude_doc_types>
+			</exclude_doc_types>
+			
+            <!-- default selected type to show in the type combo:  -->
+            <!-- Accepted values: <base_type> value or its sub types -->
+            <type>dm_document</type>
+            <!-- default selected format to show in the format combo: -->
+            <!-- make sure a document with this format is available in the /Templates cabinet or its folders -->
+            <!-- Accepted values: 'name' attribute values from dm_format object -->
+            <format>msw8</format>                       
+         </combo_defaults>
+         
+      </component>
+      </scope>
+      
+  	<!--  END PET -->
+  	
+  	<!-- START LEGAL  -->
+      <scope docbaselist="legal_docbases">
+      
+      <!-- the document list component definition -->
+      <component id="newdocument" extends="newdocument:webcomponent/config/library/create/newdocument_component.xml">
+                 
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewDocument</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewDocument</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewDocumentNlsProp</nlsbundle>
+             
+         <!-- default settings to use for type/format/template combos when launching the newdocument component -->
+         <combo_defaults>
+            <!-- base type for types to show in the type combo -->
+            <!-- Accepted values: dm_sysobject or its sub types -->
+            <base_type>dm_document</base_type>			
+
+			<!--  Filter default type list with the below -->
+		<base_doc_types>
+			<!-- Only add object types which cascade from or are the below types to combos -->
+			<object_type cascade='false'>knowledge_document</object_type>
+			<!-- object_type cascade='true'>legal_mail_message</object_type-->
+			<object_type cascade='true'>legal_document</object_type>
+		</base_doc_types>
+		<exclude_doc_types>
+			<object_type cascade='true'>bhpb_executed_doc</object_type>
+		</exclude_doc_types>
+			
+            <!-- default selected type to show in the type combo:  -->
+            <!-- Accepted values: <base_type> value or its sub types -->
+            <type>legal_document</type>
+            <!-- default selected format to show in the format combo: -->
+            <!-- make sure a document with this format is available in the /Templates cabinet or its folders -->
+            <!-- Accepted values: 'name' attribute values from dm_format object -->
+            <format>msw8</format>                       
+         </combo_defaults>
+         
+      </component>
+      </scope>
+  	<!--  END LEGAL -->
+
+  
+
+</config>
+

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+  <scope docbaselist="bhpb_types_available" role="pet_dco_role">
+      <component id="manualtransmittal">
+        <desc>
+			Manual Transmittal Component - allows users to select recipients and documents
+			for transmittal
+        </desc>        
+      	<pages>
+	      	<start>/custom/library/transmittal/pet/selectFacilityTrans.jsp</start>
+      		<manual>/custom/library/transmittal/pet/manualTransmittal.jsp</manual>
+      		<result>/custom/library/transmittal/pet/confirm.jsp</result>
+      	</pages>
+      	<class>com.bhpb.imp.wdk.webtop.transmittal.pet.ManualTransmittal</class>
+      	<nlsbundle>transmittal.pet.TransmittalNlsProp</nlsbundle>
+	  </component>
+   </scope>  
+   
+     <scope docbaselist="bhpb_types_available" role="pet_dco_role">
+     	<component id="automatictransmittal">     
+     		<desc>
+			Automatic Transmittal Component - allows users to select recipients and documents
+			for transmittal, as automaticcaly recommended at the conclusion of workflow
+			processing.  May add new documents to a transmittal, permanently add recipients, 
+			permanently remove recipients and optionally ignore a transmittal
+        	</desc>      
+      		<pages>
+      			<start>/custom/library/transmittal/pet/selectFacility.jsp</start>
+      			<automatic>/custom/library/transmittal/pet/automaticTransmittal.jsp</automatic>
+      			<document>/custom/library/transmittal/pet/selectDocument.jsp</document>
+      			<result>/custom/library/transmittal/pet/confirm.jsp</result>
+      		</pages>
+      		<class>com.bhpb.imp.wdk.webtop.transmittal.pet.AutomaticTransmittal</class>
+      		<nlsbundle>transmittal.pet.TransmittalNlsProp</nlsbundle>
+      	</component>
+   </scope>
+   
+     <scope docbaselist="bhpb_types_available" role="pet_dco_role">
+     	<component id="acknowledgementreport">
+     		<desc>
+			Transmittal Recipient Acknowledgement Report Component - displays transmittal
+			coversheet documents where no recipient acknowledgement has been set
+        	</desc>        
+      		<pages>
+      			<start>/custom/library/transmittal/pet/selectFacility.jsp</start>
+      			<report>/custom/library/transmittal/pet/acknowledgementReport.jsp</report>
+		    </pages>
+      		<class>com.bhpb.imp.wdk.webtop.transmittal.pet.AcknowledgementReport</class>
+      		<nlsbundle>transmittal.pet.TransmittalNlsProp</nlsbundle>
+      	</component>
+   </scope>
+   
+   <scope docbaselist="bhpb_types_available" role="pet_dco_role">
+     	<component id="recipientmaintenance"> 
+    	 	<desc>
+			Transmittal Recipient Maintenance Component - Allows creation, deletion and modification
+			of contacts
+        	</desc>
+	    	<pages>
+      			<start>/custom/library/transmittal/pet/selectFacility.jsp</start>
+      			<summary>/custom/library/transmittal/pet/contactMaintenance.jsp</summary>
+      			<details>/custom/library/transmittal/pet/contactDetails.jsp</details>
+      		</pages>
+      		<class>com.bhpb.imp.wdk.webtop.transmittal.pet.RecipientMaintenance</class>
+      		<nlsbundle>transmittal.pet.TransmittalNlsProp</nlsbundle>
+      	</component>
+   </scope>
+</config>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   
+   <!-- generic version with base functionality -->
+   <scope type="bhpb_pet_controlled_doc" docbase="PET_PER,PET_HOU">
+    <component id="properties" extends="properties:webcomponent/config/library/properties/properties_component.xml">
+	<pages>
+            <filter clientenv="not appintg">
+               <start>/custom/library/properties/properties.jsp</start>
+            </filter>
+            <filter clientenv="appintg">
+               <start>/webcomponent/library/properties/appintgproperties.jsp</start>
+            </filter>
+    </pages>
+	<class>com.bhpb.imp.controldoc.properties.BhpbControlldocProperties</class>
+	</component>
+   </scope>
+
+   <scope type="bhpb_document,bhpb_mail_message,bhpb_message_archive">
+      <component id="properties" extends="properties:webcomponent/config/library/properties/properties_component.xml">
+	<contains>
+            <component>attributes</component>
+            <component>permissions</component>
+            <component>useraccess</component>
+            <component>history</component>
+         </contains>
+     </component>
+   </scope>
+     <!-- SM Marketing BCD custom attributes -->
+     <!-- custom table to display reference data per table row -->
+     <scope type='bhpb_pet_bcd_ctrl_doc'>
+        <component id="properties" extends="properties:webcomponent/config/library/properties/properties_component.xml">
+  
+           <!-- Description (not NLS'd) -->
+           <desc>
+              Customised properties component for PET BCD docs:  Container component that embeds the 
+              attributes, permissions, and history components.
+           </desc>
+          
+           <!-- Contained components -->
+           <contains>
+              <component>attributes</component>
+              <component>bcdattributes</component>
+              <component>permissions</component>
+              <component>history</component>
+              <component>useraccess</component>
+           </contains>
+           
+        </component>
+   </scope>
+  
+</config>

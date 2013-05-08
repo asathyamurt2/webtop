@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+	<scope docbase="lba_production,PET_WALES,DEV_HOU_01">
+		<component modifies="toolbar:/webtop/config/toolbar_component.xml">
+			<replace path="pages.start">
+				<start>/custom/library/toolbar/toolbar.jsp
+				</start>
+			</replace>
+			<replace path="nlsbundle">
+				<nlsbundle>toolbar.ToolbarNlsProp</nlsbundle>
+			</replace>
+		</component>
+	</scope>
+    
+</config>
+

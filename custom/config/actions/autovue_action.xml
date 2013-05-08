@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config version="1.0">
+	<scope type="dm_document" docbase="PET_WALES,lba_production,DEV_HOU_01">
+		<action id="autovue">
+			<params>
+				<param name="objectId" required="true" />
+				<param name="contentType" required="false" />
+			</params>
+			<preconditions>
+				<precondition
+					class="com.documentum.webcomponent.library.actions.ViewAction" />
+			</preconditions>
+			<execution
+				class="com.documentum.web.formext.action.LaunchComponentWithPermitCheck">
+				<permit>read_permit</permit>
+				<component>autovue</component>
+			</execution>
+		</action>
+	</scope>
+	
+	
+	<scope type="dmr_content" docbase="PET_WALES,lba_production,DEV_HOU_01">
+      
+      <!-- AutoVue action -->
+		<action id="autovue">
+			<params>
+				<param name="objectId" required="true"></param>
+				<param name="contentType" required="true"></param>
+			</params>
+			<preconditions>
+				<precondition class="com.documentum.webcomponent.library.actions.ViewAction">
+				</precondition>
+			</preconditions>
+			<execution class="com.documentum.web.formext.action.LaunchComponent">
+				<component>autovue</component>
+			</execution>
+		</action>
+	</scope>
+</config>

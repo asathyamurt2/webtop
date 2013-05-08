@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope role="edit_registered_tables">
+   
+      <!--  component definition -->
+      <component id="valuelistmaintenance">
+      
+		 <!-- Description (not NLS'd) -->
+	 <desc>Allows attribute pick list values to be added, modified and deleted
+	 </desc>
+         <pages>
+         	<start>/custom/library/valuelist/selectAttribute.jsp</start>
+         	<selectcontent>/custom/library/valuelist/editValues.jsp</selectcontent>
+         	<error>/custom/library/valuelist/errors.jsp</error>
+         </pages>
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.valuelist.EditListValues</class>
+         <nlsbundle>valuelist.ValueListMaintenanceNlsProp</nlsbundle>
+ 
+      </component>
+	</scope>
+</config>

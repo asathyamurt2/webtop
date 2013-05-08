@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--  condensed pet role scope and unqualified scope functionality into single class
+as two scope elements in this component did not work.  EMC investigating -->
+<config version='1.0'>
+   <scope>
+
+      <!-- DRL Request Connection component definition -->
+      <component id="drlauthenticate" extends="drl:custom/config/drl_component.xml">
+      </component>
+   </scope>
+</config>
+

@@ -1,0 +1,37 @@
+<%@ include file ='/wdk/fragments/modal/modalDatagridContainerStart.jsp' %>
+<%--  webcomponent/library/permissions/permissionstable.jsp was used as --%>
+<%-- starting point and significantly re-hashed for this jsp --%>
+<dmf:datagrid name="gblaccessorsgrid" cellspacing="0" cellpadding="0" bordersize="0" paged='true'>
+<tr>
+<dmf:columnpanel columnname='accessorPanel'>
+<th scope='col' align='left' class="doclistfilenamedatagrid">
+<dmf:datasortlink name='sort0' nlsid='MSG_ACCESSORS' column='r_accessor_name' cssclass='doclistbodyDatasortlink'/>
+</th>
+</dmf:columnpanel>
+<dmf:columnpanel columnname='permitPanel'>
+<th scope='col' align='left' class="doclistfilenamedatagrid">
+<dmf:datasortlink name='sort1' nlsid='MSG_PERMITS' column='r_accessor_permit' cssclass='doclistbodyDatasortlink'/>
+</th>
+</dmf:columnpanel>
+</tr>
+<dmf:datagridRow cssclass="contentBackground" valign="top">
+<dmf:columnpanel columnname='accessorPanel'>
+<td valign="top" class="doclistfilenamedatagrid">
+<dmf:label datafield='accessor_display_name'/>
+</td>
+</dmf:columnpanel>
+<dmf:columnpanel columnname='permitPanel'>
+<td valign="top" class="doclistfilenamedatagrid">
+<%--         <dmda:permissionvalueformatter>--%>
+<dmf:label datafield='r_accessor_permit'/>
+<%--         </dmda:permissionvalueformatter>--%>
+</td>
+</dmf:columnpanel>
+</dmf:datagridRow>
+<dmf:nodataRow height='24' cssclass='contentBackground'>
+<td>
+<dmf:label nlsid='MSG_NO_DATA'/>
+</td>
+</dmf:nodataRow>
+</dmf:datagrid>
+<%@ include file ='/wdk/fragments/modal/modalDatagridContainerEnd.jsp' %>

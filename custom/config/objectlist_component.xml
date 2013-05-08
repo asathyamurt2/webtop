@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version='1.0'>
+   
+   <!-- this component is the Webtop version of the object list and has unqualified scope -->
+ 
+<scope docbaselist="bhpb_types_available">
+   
+      <!-- the object list component definition -->
+      <component id="objectlist" extends="objectlist:webtop/config/objectlist_component.xml">
+
+         
+         <!-- Description (not NLS'd) -->
+         <desc>
+         	PET Views
+         </desc>
+         
+        <!-- Component Behavior --> 
+        <class>com.bhpb.imp.wdk.common.navigation.ObjectList</class>
+        <nlsbundle>navigation.DocListNlsProp</nlsbundle>
+        
+        <pages>
+            <start>/custom/library/navigation/objectlist.jsp</start>
+            <thumbnail>/webtop/classic/objectlist/objectlist_thumbnail.jsp</thumbnail>
+         </pages>
+		
+		
+		 <!-- show object type filters drop-down control -->
+         <showfilters>true</showfilters>
+         
+         <objectfilters>
+
+            <!-- show all folders and documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the folders list -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type></type>
+            </objectfilter>
+
+            <!-- show folders and all objects -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_ALL</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_sysobject</type>
+               <showallversions>true</showallversions>
+            </objectfilter>
+            
+            <!-- custom filters -->
+            <objectfilter>
+               <label><nlsid>MSG_ENG_DOCS</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_SUMMARY_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_DETAILED_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_BHPB_EMAIL_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_message_archive</type>
+            </objectfilter>
+            
+	</objectfilters>
+            
+         <filtermapping id='Engineering_Documents'>
+         	<column id="object_name">MSG_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="bhpb_pet_doc_function">MSG_DOC_FUNCTION</column>
+            <column id="bhpb_pet_purpose">MSG_PURPOSE</column>
+            <column id="r_current_state">MSG_CURRENT_STATE</column>
+            <column id="bhpb_pet_bhpbrev_date">MSG_BHPB_REV_DATE</column>
+            <column id="bhpb_pet_bhpbrev_no">MSG_BHPB_REV_NO</column>
+            <column id="bhpb_pet_vendor_name">MSG_VENDOR_NAME</column>
+            <column id="bhpb_pet_vendordoc">MSG_VENDOR_DOC_NO</column>
+            <column id="bhpb_pet_contractor">MSG_CONTRACTOR</column>
+         </filtermapping>
+                       
+         <filtermapping id='Summary_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+         </filtermapping>
+ 
+          <filtermapping id='Detailed_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_creation_date">MSG_CREATION_DATE</column>
+            <column id="r_creator_name">MSG_CREATOR_NAME</column>
+            <column id="r_lock_date">MSG_LOCK_DATE</column>
+            <column id="log_entry">MSG_USER_COMMENTS</column>
+         </filtermapping>
+                                                                    
+         <filtermapping id="BHPB_Email_View">
+         	<column id="object_name">MSG_NAME</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+            <column id="receive_date">MSG_RECEIVED_DATE</column>
+            <column id="message_subject">MSG_SUBJECT</column>
+         </filtermapping>              
+                       
+                                    
+      </component>
+      
+   </scope>
+   
+      <scope docbaselist="bhpb_types_available" location="/Controlled Documents" >
+   
+      <!-- the object list component definition -->
+      <component id="objectlist" extends="objectlist:webtop/config/objectlist_component.xml">
+
+         
+         <!-- Description (not NLS'd) -->
+         <desc>
+         	PET Views
+         </desc>
+         
+        <!-- Component Behavior --> 
+        <class>com.bhpb.imp.wdk.common.navigation.ObjectList</class>
+        <nlsbundle>navigation.DocListNlsProp</nlsbundle>
+        
+        <pages>
+            <start>/custom/library/navigation/objectlist.jsp</start>
+            <thumbnail>/webtop/classic/objectlist/objectlist_thumbnail.jsp</thumbnail>
+         </pages>
+		
+		
+		 <!-- show object type filters drop-down control -->
+         <showfilters>true</showfilters>
+         
+         <objectfilters>
+<!-- Custom default -->
+            <objectfilter>
+               <label><nlsid>MSG_CTRL_DOCS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            <!-- show all folders and documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the folders list -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type></type>
+            </objectfilter>
+
+            <!-- show folders and all objects -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_ALL</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_sysobject</type>
+               <showallversions>true</showallversions>
+            </objectfilter>
+            
+            <!-- custom filters -->
+            <objectfilter>
+               <label><nlsid>MSG_ENG_DOCS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_SUMMARY_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_DETAILED_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_BHPB_EMAIL_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_message_archive</type>
+            </objectfilter>
+            
+	</objectfilters>
+            
+            <filtermapping id='Controlled_Documents'>
+         	<column id="object_name">MSG_NAME</column>
+         	<column id="bhpb_pet_bhpbrev_no">MSG_BHPB_REV_NO</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="bhpb_pet_doc_function">MSG_DOC_FUNCTION</column>
+            <column id="bhpb_pet_purpose">MSG_PURPOSE</column>
+            <column id="r_current_state">MSG_CURRENT_STATE</column>
+            <column id="bhpb_pet_bhpbrev_date">MSG_BHPB_REV_DATE</column>
+            <column id="bhpb_pet_vendor_name">MSG_VENDOR_NAME</column>
+            <column id="bhpb_pet_vendordoc">MSG_VENDOR_DOC_NO</column>
+            <column id="bhpb_pet_contractor">MSG_CONTRACTOR</column>
+         </filtermapping>
+         <filtermapping id='Engineering_Documents'>
+         	<column id="object_name">MSG_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="bhpb_pet_doc_function">MSG_DOC_FUNCTION</column>
+            <column id="bhpb_pet_purpose">MSG_PURPOSE</column>
+            <column id="r_current_state">MSG_CURRENT_STATE</column>
+            <column id="bhpb_pet_bhpbrev_date">MSG_BHPB_REV_DATE</column>
+            <column id="bhpb_pet_bhpbrev_no">MSG_BHPB_REV_NO</column>
+            <column id="bhpb_pet_vendor_name">MSG_VENDOR_NAME</column>
+            <column id="bhpb_pet_vendordoc">MSG_VENDOR_DOC_NO</column>
+            <column id="bhpb_pet_contractor">MSG_CONTRACTOR</column>
+         </filtermapping>
+                       
+         <filtermapping id='Summary_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+         </filtermapping>
+ 
+          <filtermapping id='Detailed_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_creation_date">MSG_CREATION_DATE</column>
+            <column id="r_creator_name">MSG_CREATOR_NAME</column>
+            <column id="r_lock_date">MSG_LOCK_DATE</column>
+            <column id="log_entry">MSG_USER_COMMENTS</column>
+         </filtermapping>
+                                                                    
+         <filtermapping id="BHPB_Email_View">
+         	<column id="object_name">MSG_NAME</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+            <column id="receive_date">MSG_RECEIVED_DATE</column>
+            <column id="message_subject">MSG_SUBJECT</column>
+         </filtermapping>              
+                       
+                                    
+      </component>
+      
+   </scope>
+   
+      <scope docbase ="PET_HOU" docbaselist="bhpb_types_available" role="pet_bcd_role">
+            
+            <!-- the object list component definition -->
+            <component id="objectlist" extends="objectlist:webtop/config/objectlist_component.xml">
+               
+      			
+               <pages>
+	           <start>/custom/library/navigation/objectlist.jsp</start>
+	           <thumbnail>/webtop/classic/objectlist/objectlist_thumbnail.jsp</thumbnail>
+               </pages>
+                 <class>com.bhpb.imp.wdk.common.navigation.ObjectList</class>       
+               <!-- Description (not NLS'd) -->
+               <desc>
+                  WebTop Object List component: The WebTop specific version of the doclist
+                  component. Extends the webcomponent to provide additional functionality to
+                  update the WebTop Browser Tree when navigating into a folder.
+               </desc>
+      	<nlsbundle>navigation.DocListNlsProp</nlsbundle>
+		 <!-- show object type filters drop-down control -->
+         <showfilters>true</showfilters>
+         
+         <objectfilters>
+
+            <!-- show all folders and documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the documents -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FILES</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>dm_document</type>
+            </objectfilter>
+
+            <!-- show only the folders list -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_FOLDERS</nlsid></label>
+               <showfolders>true</showfolders>
+               <type></type>
+            </objectfilter>
+
+            <!-- show folders and all objects -->
+            <objectfilter>
+               <label><nlsid>MSG_FILTER_ALL</nlsid></label>
+               <showfolders>true</showfolders>
+               <type>dm_sysobject</type>
+               <showallversions>true</showallversions>
+            </objectfilter>
+            
+            <!-- custom filters -->
+            <objectfilter>
+               <label><nlsid>MSG_ENG_DOCS</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_SUMMARY_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+            <objectfilter>
+               <label><nlsid>MSG_DETAILED_VIEW</nlsid></label>
+               <showfolders>false</showfolders>
+               <type>bhpb_pet_controlled_doc</type>
+            </objectfilter>
+            
+	</objectfilters>
+            
+         <filtermapping id='Engineering_Documents'>
+         	<column id="object_name">MSG_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="bhpb_pet_doc_function">MSG_DOC_FUNCTION</column>
+            <column id="bhpb_pet_purpose">MSG_PURPOSE</column>
+            <column id="r_current_state">MSG_CURRENT_STATE</column>
+            <column id="bhpb_pet_bhpbrev_date">MSG_BHPB_REV_DATE</column>
+            <column id="bhpb_pet_bhpbrev_no">MSG_BHPB_REV_NO</column>
+            <column id="bhpb_pet_vendor_name">MSG_VENDOR_NAME</column>
+            <column id="bhpb_pet_vendordoc">MSG_VENDOR_DOC_NO</column>
+            <column id="bhpb_pet_contractor">MSG_CONTRACTOR</column>
+         </filtermapping>
+                       
+         <filtermapping id='Summary_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+         </filtermapping>
+ 
+          <filtermapping id='Detailed_View'>
+         	<column id="object_name">MSG_NAME</column>
+       		<column id="r_version_label">MSG_VERSION_LABEL</column>
+            <column id="r_modifier">MSG_MODIFIER</column>
+            <column id="r_modify_date">MSG_MODIFIED_DATE</column>
+            <column id="subject">MSG_SUBJECT</column>
+            <column id="keywords">MSG_KEYWORDS</column>
+            <column id="owner_name">MSG_OWNER_NAME</column>
+            <column id="title">MSG_TITLE</column>
+            <column id="r_creation_date">MSG_CREATION_DATE</column>
+            <column id="r_creator_name">MSG_CREATOR_NAME</column>
+            <column id="r_lock_date">MSG_LOCK_DATE</column>
+            <column id="log_entry">MSG_USER_COMMENTS</column>
+         </filtermapping>
+      		<!-- visibility and order of attribute columns -->
+	    <columns>
+		    <!-- load invisible attribute flag -->
+		    <!-- set the value to "true" means that all the invisible attributes
+			 will be added to the columns map. The default value is "false" -->
+		    <!-- <loadinvisibleattribute>true</loadinvisibleattribute> -->
+		    <column>
+		       <attribute>object_name</attribute>
+		       <label>
+			  <nlsid>MSG_NAME</nlsid>
+		       </label>
+		       <visible>true</visible>
+		    </column>
+		    <column>
+		       <attribute>title</attribute>
+		       <label>
+			  <nlsid>MSG_ATTR_TITLE</nlsid>
+		       </label>
+		       <visible>true</visible>
+		    </column>
+		    <column>
+		       <attribute>authors</attribute>
+		       <label>
+			  <nlsid>MSG_AUTHORS</nlsid>
+		       </label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>owner_name</attribute>
+		       <label>
+			  <nlsid>MSG_OWNER_NAME</nlsid>
+		       </label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>group_name</attribute>
+		       <label>
+			  <nlsid>MSG_GROUP_NAME</nlsid>
+		       </label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_creator_name</attribute>
+		       <label>
+			  <nlsid>MSG_CREATOR_NAME</nlsid>
+		       </label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_lock_owner</attribute>
+		       <label>
+			  <nlsid>MSG_LOCK_OWNER</nlsid>
+		       </label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_object_type</attribute>
+		       <label>
+			  <nlsid>MSG_OBJECT_TYPE</nlsid>
+		       </label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_version_label</attribute>
+		       <label>
+			  <nlsid>MSG_VERSION_LABEL</nlsid>
+		       </label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_content_size</attribute>
+		       <label>
+			  <nlsid>MSG_SIZE</nlsid>
+		       </label>
+		       <visible>true</visible>
+		    </column>
+		    <column>
+		       <attribute>a_content_type</attribute>
+		       <label>
+			  <nlsid>MSG_FORMAT</nlsid>
+		       </label>
+		       <visible>true</visible>
+		    </column>
+		    <column>
+		       <attribute>r_creation_date</attribute>
+		       <label>
+			  <nlsid>MSG_CREATION_DATE</nlsid>
+		       </label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_modify_date</attribute>
+		       <label>
+			  <nlsid>MSG_MODIFIED_DATE</nlsid>
+		       </label>
+		       <visible>true</visible>
+		    </column>
+		    <column>
+		       <attribute>r_modifier</attribute>
+		       <label>
+			  <nlsid>MSG_MODIFIER</nlsid>
+		       </label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_access_date</attribute>
+		       <label>
+			  <nlsid>MSG_ACCESS_DATE</nlsid>
+		       </label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>lifecycle_name</attribute>
+		       <label><nlsid>MSG_LIFECYCLE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>current_state_name</attribute>
+		       <label><nlsid>MSG_CURRENT_STATE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>topic_status</attribute>
+		       <label>
+			  <nlsid>MSG_DISCUSSION</nlsid>
+		       </label>
+		       <visible>true</visible>
+		    </column>
+		    <column>
+		       <attribute>room_status</attribute>
+		       <label>
+			  <nlsid>MSG_ROOM_ICON</nlsid>
+		       </label>
+		       <visible>true</visible>
+		    </column>
+		    <column>
+		       <attribute>acl_name</attribute>
+		       <label><nlsid>MSG_ACL_NAME</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>log_entry</attribute>
+		       <label><nlsid>MSG_USER_COMMENTS</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_current_state</attribute>
+		       <label><nlsid>MSG_CURR_STATE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>i_retainer_id</attribute>
+		       <label><nlsid>MSG_RETAINER_ID</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_is_template</attribute>
+		       <label><nlsid>MSG_TEMPLATE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>world_permit</attribute>
+		       <label><nlsid>MSG_WORLD_PERMISSIONS</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_resume_state</attribute>
+		       <label><nlsid>MSG_RESUME_TO_STATE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>i_retain_until</attribute>
+		       <label><nlsid>MSG_RETAIN_CONTENT_UNTIL</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_aspect_name</attribute>
+		       <label><nlsid>MSG_ASPECT_NAME</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>i_branch_cnt</attribute>
+		       <label><nlsid>MSG_BRANCH_COUNT</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_category</attribute>
+		       <label><nlsid>MSG_CATEGORY</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_effective_flag</attribute>
+		       <label><nlsid>MSG_EFFECTIVE_FLAG</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_effective_label</attribute>
+		       <label><nlsid>MSG_EFFECTIVE_LABEL</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_expiration_date</attribute>
+		       <label><nlsid>MSG_EXPIRATION_DATE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_extended_properties</attribute>
+		       <label><nlsid>MSG_EXTENDED_PROPERTIES</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_controlling_app</attribute>
+		       <label><nlsid>MSG_CONTROLLING_APP</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_effective_date</attribute>
+		       <label><nlsid>MSG_EFFECTIVE_DATE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_full_content_size</attribute>
+		       <label><nlsid>MSG_FULL_CONTENT_SIZE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_full_text</attribute>
+		       <label><nlsid>MSG_FULL_TEXT_INDEXED</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>group_permit</attribute>
+		       <label><nlsid>MSG_GROUP_PERMIT</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_has_events</attribute>
+		       <label><nlsid>MSG_HAS_EVENTS</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_has_frzn_assembly</attribute>
+		       <label><nlsid>MSG_HAS_FROZEN_ASSEMBLY</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>keywords</attribute>
+		       <label><nlsid>MSG_KEYWORD</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_is_hidden</attribute>
+		       <label><nlsid>MSG_HIDDEN</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>i_is_replica</attribute>
+		       <label><nlsid>MSG_IS_REPLICA</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_is_signed</attribute>
+		       <label><nlsid>MSG_IS_SIGNED</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>language_code</attribute>
+		       <label><nlsid>MSG_LANGUAGE_CODE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_last_review_date</attribute>
+		       <label><nlsid>MSG_LAST_REVIEW_DATE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>i_latest_flag</attribute>
+		       <label><nlsid>MSG_LATEST_VERSION_ON_BRANCH</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_link_cnt</attribute>
+		       <label><nlsid>MSG_LINK_COUNT</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_link_resolved</attribute>
+		       <label><nlsid>MSG_LINK_RESOLVED</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_lock_date</attribute>
+		       <label><nlsid>MSG_LOCK_DATE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_lock_machine</attribute>
+		       <label><nlsid>MSG_LOCK_OWNERS</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>owner_permit</attribute>
+		       <label><nlsid>MSG_OWNER_PERM</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>r_is_public</attribute>
+		       <label><nlsid>MSG_PUBLIC</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>a_publish_formats</attribute>
+		       <label><nlsid>MSG_PUBLISH_FORMATS</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>i_is_reference</attribute>
+		       <label><nlsid>MSG_REFERENCE</nlsid></label>
+		       <visible>false</visible>
+		    </column>
+		    <column>
+		       <attribute>events</attribute>
+		       <label><nlsid>MSG_EVENTS</nlsid></label>
+		       <visible>false</visible>
+		       <load>true</load>
+		    </column>
+		    <column>
+		       <attribute>notification_status</attribute>
+		       <label><nlsid>MSG_NOTIFICATION</nlsid></label>
+		       <visible>false</visible>
+		       <load>true</load>
+		    </column>
+		    <column>
+		      <attribute>attachment_count</attribute>
+		      <label>
+			<nlsid>MSG_ATTACHMENT_ICON</nlsid>
+		      </label>
+		      <visible>false</visible>
+		    </column>
+		    <column>
+		      <attribute>receive_date</attribute>
+		      <label>
+			<nlsid>MSG_RECEIVED</nlsid>
+		      </label>
+		      <visible>false</visible>
+		    </column>
+
+		    <column>
+		      <attribute>message_importance</attribute>
+		      <label>
+		  	<nlsid>MSG_IMPORTANCE</nlsid>
+		      </label>
+		      <visible>false</visible>
+		    </column>
+		    <column>
+		      <attribute>sent_date</attribute>
+		      <label>
+		 	 <nlsid>MSG_SENT</nlsid>
+		      </label>
+		      <visible>false</visible>
+		   </column>
+		   <column>
+		      <attribute>from_addr</attribute>
+		      <label>
+			<nlsid>MSG_FROM</nlsid>
+		      </label>
+		      <visible>false</visible>
+		   </column>
+		   <column>
+		      <attribute>to_addr</attribute>
+		      <label>
+			<nlsid>MSG_TO</nlsid>
+		      </label>
+		      <visible>false</visible>
+		   </column>
+		   <column>
+		      <attribute>cc_addr</attribute>
+		      <label>
+		        <nlsid>MSG_CC</nlsid>
+		      </label>
+		      <visible>false</visible>
+		    </column>
+		    <column>
+		      <attribute>bhpb_bcd_author_id</attribute>
+		      <label><nlsid>MSG_BCD_AUTHOR_ID</nlsid></label>
+		      <visible>true</visible>
+		    </column>
+		    <column>
+		      <attribute>bhpb_bcd_doc_author</attribute>
+		      <label><nlsid>MSG_BCD_DOC_AUTHOR</nlsid></label>
+		      <visible>true</visible>
+	            </column>
+	            <column>
+		      <attribute>bhpb_pet_bcd_func_type</attribute>
+		      <label><nlsid>MSG_BCD_FUNCTION_TYPE</nlsid></label>
+		      <visible>true</visible>
+	            </column>
+		   <column>
+		      <attribute>bhpb_bcd_bus_process</attribute>
+		      <label><nlsid>MSG_BCD_BUS_PROCESS</nlsid></label>
+		      <visible>true</visible>
+	           </column>
+		   <column>
+		      <attribute>bphb_bcd_bus_process_lvl_2</attribute>
+		      <label><nlsid>MSG_BCD_BUS_PROCESS_L2</nlsid></label>
+		      <visible>true</visible>
+	          </column>	
+		  <column>
+		     <attribute>bhpb_bcd_next_review_date</attribute>
+		     <label><nlsid>MSG_BCD_BUS_NEXT_REVIEW</nlsid></label>
+		     <visible>true</visible>
+	         </column>
+	    </columns>
+         </component>
+     </scope>     
+ 
+
+   
+</config>
+

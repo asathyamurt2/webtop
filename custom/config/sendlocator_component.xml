@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version="1.0">
+   <scope >
+      <component modifies="sendlocator:webcomponent/config/library/sendlocator/sendlocator_component.xml">
+      <replace path="class">
+      	<class>com.bhpb.imp.wdk.webtop.sendlocator.SendLocator</class>
+      </replace>
+      </component>
+   </scope>
+</config>   

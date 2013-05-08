@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope docbaselist="bhpb_types_available">
+      
+      <component id="wfuserorgroupfromgrouplocator" extends="wfuserorgroupfromgrouplocator:webcomponent/config/library/workflow/wfuserorgroupfromgrouplocator_component.xml">
+      <!-- locator container -->
+	<containerselectable>false</containerselectable>
+      </component>      
+            
+     
+   </scope>
+</config>

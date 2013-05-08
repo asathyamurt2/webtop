@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+  
+   <scope type="bhpb_pet_controlled_doc" docbase="PET_POS,PET_LON,PET_WALES,BHPP_PAK_ASST,lba_production,SSC_HOU,PET_GETT_HOU">
+      <attributelist id="import" extends="attributes:webcomponent/config/library/attributes_dm_document_docbaseattributelist.xml">
+		<!--  overwrites docapp configuration during import to
+		display single attribute (document number base) allowing
+		 for doc number creation -->
+         <data_dictionary_population>
+            <enable>false</enable>
+
+            <!-- ddscope specifies scope class and scope value for retrieving -->
+            <!-- the right data dictionary information from the content       -->
+            <!-- server. Currently, only application is valid in the name field -->
+            <ddscopes>
+               <ddscope name="application">webtop</ddscope>
+            </ddscopes>
+            <ignore_attributes>
+               <!-- add any attributes that shouldn't be shown in the UI here -->
+               <attribute name="r_object_id"/>
+               <attribute name="object_name"/>
+               <attribute name="title"/>
+               <attribute name="subject"/>
+               <attribute name="keywords"/>
+               <attribute name="authors"/>
+               <attribute name="r_content_size"/>
+               <attribute name="r_full_content_size"/>
+               <attribute name="owner_name"/>
+               <attribute name="r_version_label"/>
+               <attribute name="r_lock_date"/>
+               <attribute name="r_lock_owner"/>
+               <attribute name="log_entry"/>
+               <attribute name="r_creation_date"/>
+               <attribute name="r_creator_name"/>
+               <attribute name="r_modify_date"/>
+               <attribute name="r_modifier"/>
+               <attribute name="r_access_date"/>
+               <attribute name="r_policy_id"/>
+               <attribute name="r_current_state"/>
+               <attribute name="r_object_type"/>
+               <attribute name="a_content_type"/>
+               <attribute name="show_topic"/>
+            </ignore_attributes>
+         </data_dictionary_population>
+
+         <!-- Info -->
+         <category id="info">
+            <name><nlsid>MSG_INFO</nlsid></name>
+            <attributes>
+            <attribute name="bhpb_pet_document_no_base"/>
+            <!-- attribute name="bhpb_pet_document_no_format"/-->
+            <attribute name="bhpb_pet_requestor"/>
+            <attribute name="bhpb_pet_date_registered"/>
+            <attribute name="bhpb_pet_completion_date"/>
+            <attribute name="bhpb_pet_doc_supplier"/>
+            <attribute name="bhpb_pet_requestor_comments"/>
+            </attributes>
+         </category>
+
+      </attributelist>
+
+   </scope>
+
+
+  <scope type="bhpb_pet_controlled_doc" docbase="PET_PER,PET_HOU">
+      <attributelist id="import" extends="attributes:webcomponent/config/library/attributes_dm_document_docbaseattributelist.xml">
+		<!--  overwrites docapp configuration during import to
+		display single attribute (document number base) allowing
+		 for doc number creation -->
+<nlsbundle>attributes.AttributesNlsProp</nlsbundle>
+         <data_dictionary_population>
+            <enable>false</enable>
+
+            <!-- ddscope specifies scope class and scope value for retrieving -->
+            <!-- the right data dictionary information from the content       -->
+            <!-- server. Currently, only application is valid in the name field -->
+            <ddscopes>
+               <ddscope name="application">webtop</ddscope>
+            </ddscopes>
+
+            <ignore_attributes>
+               <!-- add any attributes that shouldn't be shown in the UI here -->
+               <attribute name="keywords"/>
+               <attribute name="authors"/>
+               <attribute name="r_content_size"/>
+               <attribute name="r_full_content_size"/>
+               <attribute name="owner_name"/>
+               <attribute name="r_version_label"/>
+               <attribute name="r_lock_date"/>
+               <attribute name="r_lock_owner"/>
+               <attribute name="log_entry"/>
+               <attribute name="r_creation_date"/>
+               <attribute name="r_creator_name"/>
+               <attribute name="r_modify_date"/>
+               <attribute name="r_modifier"/>
+               <attribute name="r_access_date"/>
+               <attribute name="r_policy_id"/>
+               <attribute name="r_current_state"/>
+               <attribute name="r_object_type"/>
+               <attribute name="a_content_type"/>
+               <attribute name="show_topic"/>
+		<attribute name="bhpb_pet_doctype"/>
+            </ignore_attributes>
+         </data_dictionary_population>
+	
+         <!-- Info -->
+         <!-- Info -->
+         <category id="info">
+            <name><nlsid>MSG_INFO</nlsid></name>
+            <attributes>
+            <attribute name="bhpb_pet_document_no_base"/>
+            <!-- attribute name="bhpb_pet_document_no_format"/-->
+            </attributes>
+         </category>
+      </attributelist>
+
+   </scope>
+</config>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version='1.0'>
+   <!-- workflow task scope -->
+   <scope type='dm_task' role="pet_role">
+      <component id="taskmanagercontainer" extends="taskmanagercontainer:application='webcomponent' type='dm_task'">
+      
+         <!-- Description (not NLS'd) -->
+         <desc>
+            This container holds all the pieces of the task manager.
+         </desc>
+      
+         <class>com.bhpb.imp.wdk.webtop.workflow.pet.TaskMgrContainer</class>	     
+      </component>
+      
+   </scope>
+
+  
+</config>

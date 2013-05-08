@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version="1.0">
+	<scope>
+		<menuconfig
+			modifies="menubar_view_menu:webcomponent/config/library/menubar/menubar_component.xml">
+			<insertafter
+				path="menu[name=view_menu].actionmenuitem[name=view_locations]">
+				<actionmenuitem dynamic='singleselect' name='view_pdf'
+					nlsid='MSG_VIEW_PDF' action='viewpdf' showifinvalid='true' />
+			</insertafter>
+		</menuconfig>
+		<menuconfig
+			modifies="menubar_file_menu:webcomponent/config/library/menubar/menubar_component.xml">
+			<insertafter path="menu[name=file_menu].actionmenuitem[name=file_send_locator]">
+				<actionmenuitem dynamic="multiselect" name='file_view_portal_locator' action="viewportallocator"
+					nlsid="MSG_VIEW_PORTAL_LOCATOR" showifdisabled="true"
+					showifinvalid="true" />
+			</insertafter>
+		</menuconfig>
+		<menuconfig id="menubar_admin_menu">
+			<menu name='pet_admin' nlsid='MSG_PET_ADMIN'>
+				<menuconfig id="admin_docnumber_submenu" />
+				<actionmenuitem dynamic='genericnoselect' name='value_list_maintenance'
+					nlsid='MSG_LIST_MAINTENANCE' action='valuelistmaintenance'
+					showifinvalid='true' />
+				<actionmenuitem dynamic='genericnoselect' name='assign_tag_no'
+					nlsid='MSG_ASSIGN_TAG_NO' action='assigntagnumber' showifinvalid='true' />
+				<menuconfig id="admin_transmittal_submenu" />
+			</menu>
+		</menuconfig>
+		<menuconfig id="menubar_report_menu">
+			<menu name='report_menu' nlsid='MSG_IMP_REPORT'>
+				<menuconfig id="report_security_submenu" />
+				<menuconfig id="report_legal_submenu" />
+				<actionmenuitem dynamic='genericnoselect' name='custom_query'
+					nlsid='MSG_CUSTOM_QUERY' action='customquery' showifinvalid='true' />
+			</menu>
+		</menuconfig>
+		<menuconfig id="admin_docnumber_submenu">
+			<menu name='doc_numbering_menu' nlsid='MSG_DOC_NUMBERING'>
+				<actionmenuitem dynamic='genericnoselect' name='generate_number_format'
+					nlsid='MSG_GENERATE_FORMAT' action='generatenumberformat'
+					showifinvalid='true' />
+				<actionmenuitem dynamic='genericnoselect' name='create_format_content'
+					nlsid='MSG_ADD_CONTENT' action='createformatcontent' showifinvalid='true' />
+				<actionmenuitem dynamic='genericnoselect' name='edit_format_content'
+					nlsid='MSG_EDIT_CONTENT' action='editformatcontent' showifinvalid='true' />
+			</menu>
+		</menuconfig>
+		<menuconfig id="admin_transmittal_submenu">
+			<menu name='transmittal_menu' nlsid='MSG_TRANSMITTAL'>
+				<actionmenuitem dynamic='genericnoselect' name='manual_transmittal'
+					nlsid='MSG_MANUAL' action='manualtransmittal' showifinvalid='true' />
+				<actionmenuitem dynamic='genericnoselect' name='automatic_transmittal'
+					nlsid='MSG_AUTOMATIC' action='automatictransmittal' showifinvalid='true' />
+				<actionmenuitem dynamic='genericnoselect' name='acknowledgement_report'
+					nlsid='MSG_REPORT' action='acknowledgementreport' showifinvalid='true' />
+				<actionmenuitem dynamic='genericnoselect' name='recipient_maintenance'
+					nlsid='MSG_RECIPIENT_MAINTENANCE' action='recipientmaintenance'
+					showifinvalid='true' />
+			</menu>
+		</menuconfig>
+		<menuconfig id="report_security_submenu">
+			<menu name='security_report_menu' nlsid='MSG_SECURITY_REPORT'>
+				<actionmenuitem dynamic='singleselect' name='security_report_discrepancy'
+					nlsid='MSG_DISCREP_REPORT' action='fldr_descrepancy' showifinvalid='true' />
+				<actionmenuitem dynamic='singleselect' name='security_report_folder_acl'
+					nlsid='MSG_FOLDER_ACL_REPORT' action='fldr_acl' showifinvalid='true' />
+				<actionmenuitem dynamic='singleselect' name='security_report_acl_detail'
+					nlsid='MSG_ACL_DETAIL_REPORT' action='acldetail' showifinvalid='true' />
+			</menu>
+		</menuconfig>
+		<menuconfig id="report_legal_submenu">
+			<menu name='legal_report_menu' nlsid='MSG_LEGAL_REPORT'>
+				<actionmenuitem dynamic='genericnoselect' name='namingconvention_report'
+					nlsid='MSG_NAMING_REPORT' action='namingconventionreportaction'
+					showifinvalid='true' />
+				<actionmenuitem dynamic='genericnoselect' name='folderarchival_report'
+					nlsid='MSG_FOLDER_ARCHIVAL_REPORT' action='folderarchivalreportaction'
+					showifinvalid='true' />
+			</menu>
+		</menuconfig>
+	</scope>
+	
+	
+	<scope docbase="PET_WALES,lba_production,DEV_HOU_01">
+		<menuconfig modifies="menubar_file_menu:/webcomponent/config/library/menubar/menubar_component.xml">
+			<insertafter path = "menu[name=file_menu].actionmenuitem[id=file_view]">
+				<actionmenuitem dynamic="singleselect" id="file_view_as_autovue" name="file_view_as_autovue" nlsid="MSG_AUTOVUE" action="autovue" showifinvalid="true"/>
+			</insertafter>
+		</menuconfig>
+	</scope>
+	
+</config>

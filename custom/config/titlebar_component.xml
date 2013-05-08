@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- duplicate java script function in jsp pages!! -->
+<config version='1.0'>
+   <scope docbase="lba_production,PET_WALES">
+      <component id="titlebar" extends="titlebar:webtop/config/titlebar_component.xml">
+         <desc>
+            Added SAP tickbox and simple search mod for UKPU.
+         </desc>
+         
+         <pages>
+            <start>/custom/titlebar/titlebar_lba.jsp</start>
+         </pages>
+         
+      </component>
+   </scope>
+    
+</config>
+

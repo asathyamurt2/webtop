@@ -1,0 +1,63 @@
+<config version='1.0'>
+   <scope type="dm_folder">
+      <!-- Import action -->
+      <action id="import" extends="import:webcomponent/config/actions/dm_folder_actions.xml">
+         <execution class="com.bhpb.imp.wdk.webtop.execution.pet.LaunchCreateComponentWithPermitCheck">
+                        <permit>folder_link_permit</permit>
+            <dynamicfilter class="com.documentum.web.formext.action.LaunchComponentFilter">
+          <!-- Render ucf applet for accessibility users too. -->
+               <option>
+                  <criteria>
+                     <criterion name="isaccessibilityon" value="true" evaluatorclass="com.documentum.web.contentxfer.AccessibilityEvaluator"/>
+                  </criteria>
+                  <filter clientenv="not appintg">
+                     <selection>
+                        <component>import</component>
+                        <container>importcontainer</container>
+                     </selection>
+                  </filter>
+                  <filter clientenv="appintg">
+                     <selection>
+                        <component>import</component>
+                        <container>importcontainer</container>
+                     </selection>
+                  </filter>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name="contenttransfer"  value="http" evaluatorclass="com.documentum.web.contentxfer.ContentTransferLaunchComponentEvaluator"/>
+                  </criteria>
+                  <selection>
+                     <component>httpimport</component>
+                     <container>httpimportcontainer</container>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name="isAttachmentFolder" value="true" evaluatorclass="com.documentum.webcomponent.library.attachments.AttachmentFolderEvaluator"/>
+                  </criteria>
+                  <selection>
+                     <component>attachmentimport</component>
+                     <container>attachmentimportcontainer</container>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name="contenttransfer" value="ucf" evaluatorclass="com.documentum.web.contentxfer.ContentTransferLaunchComponentEvaluator"/>
+                  </criteria>
+                  <selection>
+                     <component>import</component>
+                     <container>importcontainer</container>
+                  </selection>
+               </option>
+            </dynamicfilter>
+         </execution>
+		 <invocation>
+            <modalpopup>
+               <windowsize>properties</windowsize>
+               <refreshparentwindow>onok</refreshparentwindow>
+            </modalpopup>
+         </invocation>
+      </action>
+     </scope>
+ </config>

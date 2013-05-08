@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--  DOC-U11 Component actions -->
+<config version='1.0'>
+  <scope role="pet_dco_role">
+
+      <action id="generatenumberformat">        
+         <execution class="com.documentum.web.formext.action.LaunchComponent">
+            <container>wizardcontainer</container>
+            <component>generatenumberformat</component>
+          </execution>
+      </action>
+   </scope>  
+   
+   <scope role="pet_dco_role">
+
+      <action id="createformatcontent">        
+         <execution class="com.documentum.web.formext.action.LaunchComponent">
+            <container>dialogcontainer</container>
+            <component>createformatcontent</component>
+          </execution>
+      </action>
+   </scope>  
+   
+     <scope role="pet_dco_role">
+
+      <action id="editformatcontent">        
+         <execution class="com.documentum.web.formext.action.LaunchComponent">
+            <container>wizardcontainer</container>
+            <component>editformatcontent</component>
+
+          </execution>
+      </action>
+   </scope> 
+   
+   
+</config>

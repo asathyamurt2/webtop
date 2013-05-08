@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version='1.0'>
+   <scope type="dm_workflow">
+   
+      <!-- abort workflow component -->
+      <component id="abortworkflow" extends="abortworkflow:webcomponent/config/library/workflow/abort/abortworkflow_component.xml">
+      
+         <!-- Description (not NLS'd) -->
+         <desc>
+         customisation for pet to empty workflow status attribute
+         </desc>
+         
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.workflow.abort.AbortWorkflow</class-->
+         <class>com.bhpb.imp.wdk.webtop.workflow.pet.AbortWorkflow</class>
+        
+      </component>
+   </scope>
+</config>

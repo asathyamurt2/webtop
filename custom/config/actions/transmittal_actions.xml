@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+  <scope docbaselist="bhpb_types_available" role="pet_dco_role">
+      <action id="manualtransmittal">        
+         <execution class="com.documentum.web.formext.action.LaunchComponent">
+            <container>transmittalwizardcontainer</container>
+            <component>manualtransmittal</component>
+          </execution>
+      </action>
+   </scope>  
+   
+     <scope docbaselist="bhpb_types_available" role="pet_dco_role">
+      <action id="automatictransmittal">        
+         <execution class="com.documentum.web.formext.action.LaunchComponent">
+            <container>transmittalwizardcontainer</container>
+            <component>automatictransmittal</component>
+          </execution>
+      </action>
+   </scope>
+   
+     <scope docbaselist="bhpb_types_available" role="pet_dco_role">
+      <action id="acknowledgementreport">        
+         <execution class="com.documentum.web.formext.action.LaunchComponent">
+            <container>transmittalwizardcontainer</container>
+            <component>acknowledgementreport</component>
+          </execution>
+      </action>
+   </scope>
+   
+   <scope docbaselist="bhpb_types_available" role="pet_dco_role">
+     	<action id="recipientmaintenance"> 
+         	<execution class="com.documentum.web.formext.action.LaunchComponent">
+            	<container>transmittalwizardcontainer</container>
+            	<component>recipientmaintenance</component>
+          	</execution>
+      </action>
+   </scope>
+</config>

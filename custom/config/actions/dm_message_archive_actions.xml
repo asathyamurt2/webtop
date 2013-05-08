@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope type='dm_message_archive'>
+      <!-- View action -->
+      <action id="view" extends="view:webtop/config/dm_message_archive_action.xml">
+         <params>
+            <param name="objectId" required="true"></param>
+            <param name="type" required="false"></param>
+            <param name="contentType" required="false"></param>
+            <param name="contentSize" required="false"></param>
+            <param name="isReference" required="false"></param>
+            <param name="isCurrentVDMNode" required="false"></param>
+            <param name='isVirtualDoc' required="false"></param>
+            <param name='linkCount' required="false"></param>
+            <param name="lockOwner" required="false"></param>
+            <param name="assembledFromId" required="false"/>
+         </params>
+
+<!--  Use this execution class to view in Outlook by default-->
+
+  <!--        <execution class="com.documentum.web.formext.action.LaunchComponentWithPermitCheck">
+            <permit>read_permit</permit>
+            <component>export</component>
+            <container>exportviewcontainer</container>
+         </execution>
+  -->
+<!--  Use this execution class to view as HTML by default -->
+    <execution class="com.documentum.web.formext.action.RedirectActionExecution">
+            <dynamicfilter class="com.documentum.web.formext.action.LaunchComponentFilter">
+               <option>
+                  <criteria>
+                     <criterion name='ismessagearchiveviewasvdm' value='true' evaluatorclass='com.documentum.webcomponent.library.messagearchive.MessageArchiveViewAsVDMEvaluator' />
+                  </criteria>
+                  <selection>
+                     <execution class="com.documentum.webtop.webcomponent.actions.ViewAction">
+                     </execution>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name='appview' value='classic' evaluatorclass='com.documentum.webtop.common.AppViewLaunchEvaluator'/>
+                     <criterion name='ismodalpopupenabled' value='true' evaluatorclass='com.documentum.webcomponent.library.actions.ModalPopupEvaluator' />
+                  </criteria>
+                  <selection>
+                     <execution class="com.documentum.web.formext.action.LaunchComponentWithPermitCheck">
+                        <permit>read_permit</permit>
+                        <component>doclist</component>
+                     </execution>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name='appview' value='classic' evaluatorclass='com.documentum.webtop.common.AppViewLaunchEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <execution class="com.documentum.web.formext.action.LaunchComponentWithPermitCheck">
+                        <permit>read_permit</permit>
+                        <component>doclist</component>
+                        <container>navigationcontainer</container>
+                        <navigation>jump</navigation>
+                     </execution>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name='appview' value='streamline' evaluatorclass='com.documentum.webtop.common.AppViewLaunchEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <execution class="com.documentum.web.formext.action.LaunchComponentWithPermitCheck">
+                        <permit>read_permit</permit>
+                        <component>drilldown</component>
+                        <container>navigationcontainer</container>
+                        <navigation>jump</navigation>
+                     </execution>
+                  </selection>
+               </option>
+            </dynamicfilter>
+         </execution>
+         
+         <invocation>
+            <modalpopup>
+               <windowsize>messagearchiveviewer</windowsize>
+               <refreshparentwindow>never</refreshparentwindow>
+            </modalpopup>
+         </invocation>
+      </action>
+   </scope>
+</config>

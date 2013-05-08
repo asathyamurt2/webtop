@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version='1.0'>
+   
+   <scope type="bhpb_pet_controlled_doc" role="pet_dco_role">
+
+   
+	     <action id="startworkflowfromdoc" extends="startworkflowfromdoc:webcomponent/config/actions/dm_sysobject_actions.xml">
+
+	         <params>
+	            <param name="objectId" required="true"/>
+	            <param name="startworkflowId" required="false"/>
+	            <param name="ownerName" required="false"/>
+	            <param name="lockOwner" required="false"/>
+	         </params>
+
+	         <preconditions>             
+	            	<!-- IMP PET: New pre-condition: check if the document is checked in -->
+	            	<precondition class="com.bhpb.imp.wdk.webtop.workflow.pet.StartAttachmentPreCondition"></precondition>
+
+					
+		            <precondition class="com.documentum.webcomponent.library.actions.ArgumentExistsPrecondition">
+	    	           <argument>startworkflowId</argument>
+	        	    </precondition>        	    
+	                <precondition class="com.documentum.web.formext.action.GenericRolePrecondition">
+	            	   <role>contributor</role>
+		            </precondition>  
+		                  
+	            </preconditions>  
+	      </action>
+	</scope>
+
+</config>

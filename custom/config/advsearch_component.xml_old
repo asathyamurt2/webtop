@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+     
+  
+   <!--  PJethwani 09/05/07 - Restrict Available Search Types for Petroleum Users -->
+   <scope docbaselist="bhpb_pet_docbases" role="pet_role">
+   
+   	 <component id="advsearch" extends="advsearch:webtop/config/advsearchex_component.xml">
+   	 
+   	 	<desc>
+   	 		For Petroleum users the Object Type drop-down list on the Advanced Search component is restricted
+   	 		to only these types
+   	 	</desc>
+
+   	 	<includetypes descend="false">bhpb_document,bhpb_mail_message,bhpb_message_archive,bhpb_pet_controlled_doc,bhpb_pet_document,bhpb_pet_trans_coversheet</includetypes>
+
+   	 </component>
+   </scope>
+   
+   
+     <scope docbaselist="bhpb_wales_docbases">
+   
+   	 <component id="advsearch" extends="advsearch:webtop/config/advsearchex_component.xml">
+   	 
+   	 	<desc>
+   	 		For Petroleum users the Object Type drop-down list on the Advanced Search component is restricted
+   	 		to only these types
+   	 	</desc>
+
+   	 	<includetypes descend="false">dm_document,bhpb_document,bhpb_mail_message,bhpb_message_archive,bhpb_pet_controlled_doc,bhpb_pet_document,bhpb_pet_trans_coversheet</includetypes>
+
+   	 </component>
+   </scope>
+   
+   
+     <scope docbaselist="edt_pak_docbases">
+   
+   	 <component id="advsearch" extends="advsearch:webtop/config/advsearchex_component.xml">
+   	 
+   	 	<desc>
+   	 		For Petroleum users the Object Type drop-down list on the Advanced Search component is restricted
+   	 		to only these types
+   	 	</desc>
+
+   	 	<includetypes descend="true">dm_document</includetypes>
+
+   	 </component>
+   </scope>
+   
+     <scope docbaselist="edt_lba_docbases">
+   
+   	 <component id="advsearch" extends="advsearch:webtop/config/advsearchex_component.xml">
+   	 
+   	 	<desc>
+   	 		For Petroleum users the Object Type drop-down list on the Advanced Search component is restricted
+   	 		to only these types
+   	 	</desc>
+
+   	 	<includetypes descend="true">dm_document</includetypes>
+
+   	 </component>
+   </scope>
+   
+   
+      <!--  PJethwani 09/05/07 - Restrict Available Search Types for Petroleum Users -->
+   <scope docbaselist="bhpb_pet_docbases" type="bhpb_pet_controlled_doc" role="pet_role">
+   
+   	 <component id="advsearch" extends="advsearch:webtop/config/advsearchex_component.xml">
+
+   	 	<desc>
+			When a Petroleum user selects the BHPB PET Controlled Document type then the customised Advanced
+			Search screen is displayed
+   	 	</desc>
+
+   	 	<includetypes descend="false">bhpb_document,bhpb_mail_message,bhpb_pet_controlled_doc,bhpb_pet_document,bhpb_pet_trans_coversheet</includetypes>
+
+   	 	<nlsbundle>advancedsearch.AdvSearchNlsProp</nlsbundle>
+
+   	 	<class>com.bhpb.imp.wdk.webtop.advsearch.pet.AdvSearch</class>
+
+   	 	<pages>
+            <start>/custom/library/advancedsearch/advsearchex.jsp</start>
+        </pages>
+   	 </component>
+   </scope>
+   
+   <!-- START LEGAL -->
+    <scope docbaselist="legal_docbases">
+   
+   	 <component id="advsearch" extends="advsearch:webtop/config/advsearchex_component.xml">
+
+  	 	<includetypes descend="true">legal_document,knowledge_document,legal_mail_message,legal_folder</includetypes>
+   	 </component>
+   </scope>
+   <!-- END LEGAL -->
+   
+
+   
+</config>

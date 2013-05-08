@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope>
+   
+      <!-- Folder Descrepancy ACL Report component definition -->
+      <component id="folderdescrepancyacl">
+      
+		 <!-- Description (not NLS'd) -->
+	 <desc>List documents with ACL's which differ from the ACL assigned to its parent folder
+	 </desc>
+	<params>
+            <param name="objectId" required="true"></param>
+         </params>
+         
+         <!-- Component Layout -->
+         <pages>
+            <start>/custom/library/reports/ACLDiscrepancyReport.jsp</start>
+         </pages>
+
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.report.FolderACLDiscrepancy</class>
+         <nlsbundle>reports.SecurityReportNlsProp</nlsbundle>
+
+      </component>
+
+      <!-- Folder ACL Report component definition -->
+      <component id="folderacl">
+      
+		 <!-- Description (not NLS'd) -->
+     	<desc>List all folders within a cabinet/folder and it's ACL name and owner report
+     	</desc>
+
+	<params>
+            <param name="objectId" required="true"></param>
+         </params>
+         
+         <!-- Component Layout -->
+         <pages>
+            <start>/custom/library/reports/FolderACLReport.jsp</start>
+         </pages>
+
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.report.FolderACL</class>
+         <nlsbundle>reports.SecurityReportNlsProp</nlsbundle>
+
+      </component>
+
+      <!-- ACL Detail Report component definition -->
+      <component id="acldetail">
+      
+		 <!-- Description (not NLS'd) -->
+	<desc>Report all the "distinct" (only once if repeated) ACL's within a folder/cabinet
+	</desc>
+	
+	<params>
+            <param name="objectId" required="true"></param>
+        </params>
+
+         <!-- Component Layout -->
+         <pages>
+            <start>/custom/library/reports/ACLDetailReport.jsp</start>
+         </pages>
+
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.report.ACLDetails</class>
+         <nlsbundle>reports.SecurityReportNlsProp</nlsbundle>
+
+
+      </component>
+   </scope>
+</config>

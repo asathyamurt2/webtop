@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope type="dm_cabinet,dm_folder" role="imp_security_reports_role">
+      <!-- action definitions -->
+
+      <!-- Folder Descrepancy ACL report action -->
+      <action id="fldr_descrepancy">
+	<params>
+        	<param name="objectId" required="true"></param>
+        	<param name="folderId" required="false"></param>
+        </params>
+         <execution class="com.bhpb.imp.wdk.webtop.report.LaunchSecurityReport">
+            <component>folderdescrepancyacl</component>
+           </execution>
+      </action>
+
+	  <!-- folder ACL report action -->
+      <action id="fldr_acl">
+	<params>
+        	<param name="objectId" required="true"></param>
+        	<param name="folderId" required="false"></param>
+        </params>
+
+         <execution class="com.bhpb.imp.wdk.webtop.report.LaunchSecurityReport">
+            <component>folderacl</component>
+         </execution>
+      </action>
+
+	  <!-- overdue task report action -->
+      <action id="acldetail">
+	<params>
+        	<param name="objectId" required="true"></param>
+        	<param name="folderId" required="false"></param>
+        </params>
+
+         <execution class="com.bhpb.imp.wdk.webtop.report.LaunchSecurityReport">
+            <component>acldetail</component>
+         </execution>
+      </action>
+   </scope>
+</config>

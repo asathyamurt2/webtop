@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Component: task manager               -->
+<!-- SSCA requested change but was applied globally as mutual beneficial -->
+
+<!-- Revision    $Revision: 1.2 $ -->
+<!-- Modified on $Date: 2007/04/17 03:18:00 $ -->
+
+<config version='1.0'>
+   <scope>   
+      <component id="taskmgrclassic" extends="taskmgrclassic:webtop/config/taskmgrclassic_component.xml">
+      
+         <showusertimeandcost>false</showusertimeandcost>
+	        
+          </component>      
+   </scope>
+ 
+</config>

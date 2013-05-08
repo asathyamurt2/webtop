@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--  condensed pet role scope and unqualified scope functionality into single class
+as two scope elements in this component did not work.  EMC investigating -->
+<config version='1.0'>
+<scope>
+
+      <!-- DRL component definition -->
+      <component id="drl" extends="drl:wdk/config/drl_component.xml">
+      
+       <!-- Description (not NLS'd) -->
+         <desc>
+			This is the customised DRL component. Refer DOC_U13 View Content Design Document for further
+			information about this component.
+         </desc>
+
+         <params>
+            <param name='objectId' required='true'></param>
+            <param name='versionLabel' required='false'></param>
+            <param name='format' required='false'></param>
+            <!-- 
+            	 New parameter 'status' added to the drl component. It corresponds to the lifecycle state
+            	 of the target document
+            -->
+            <param name='state' required='false'></param>
+            <param name='portal' required='false'></param>
+         </params>      
+
+
+         <class>com.bhpb.imp.wdk.webtop.drl.pet.ViewContent</class>
+          <!-- class>com.bhpb.imp.wdk.webtop.drl.DRLComponent</class-->
+         
+         <nlsbundle>viewcontent.ViewContentNlsProp</nlsbundle>
+
+      </component>
+      
+   </scope>
+</config>
+

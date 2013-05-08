@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope>
+      
+      <component id="menubar" extends="menubar:webtop/config/menubar_component.xml">
+       
+       <menuconfigids>
+            <id>menubar_file_menu</id>
+            <id>menubar_edit_menu</id>
+            <id>menubar_view_menu</id>
+            <id>menubar_tools_menu</id>
+            <filter entitlement="recordsmanager,rps">
+               <id>menubar_rpm_menu</id>
+            </filter>
+            <id>menubar_report_menu</id>
+            <id>menubar_admin_menu</id>
+       </menuconfigids>
+
+  	<!--        
+  		 <pages>
+            <start>/custom/library/menubar_imp/menubar.jsp</start>
+         </pages>
+       -->  
+         <nlsbundle>menubar.MenuBarNlsProp</nlsbundle>
+      </component>
+      
+   </scope>
+</config>

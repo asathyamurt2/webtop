@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+
+<config version='1.0'>
+   <scope docbaselist="bhpb_types_available" role="pet_dco_role">   
+      <component id="reportmainclassic" extends="reportmainclassic:webtop/config/reportmainclassic_component.xml">
+      	 <desc>
+	             Component listing workflow objects and their status.
+         </desc>
+         <class>com.bhpb.imp.wdk.webtop.workflow.pet.ReportMainClassic</class>
+        
+      </component>    
+      
+   </scope>   
+</config>
+

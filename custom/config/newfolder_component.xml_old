@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   
+   
+ 
+  
+   
+   <!-- START PET - Restrict pet users folder choice to basics  -->
+   <scope docbaselist="bhpb_pet_docbases" role='pet_role'>
+       <!-- the document list component definition -->
+      <component id="newfolder" extends="newfolder:webcomponent/config/library/create/newfolder_component.xml">
+         
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewFolder</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewFolder</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewFolderNlsProp</nlsbundle>
+         
+         <!-- default settings  -->
+
+         <!-- base type for types to be retrived -->
+         <!-- accepted values: dm_folder or its sub types -->
+         <base_type>dm_folder</base_type>
+         
+         <!--  Filter default type list with the below -->
+         <base_folder_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='false'>dm_folder</object_type>
+				<object_type cascade='true'>bhpb_folder</object_type>
+		 </base_folder_types>
+		 <exclude_folder_types>
+		 	<object_type cascade = 'false'>bhpb_pet_facility</object_type>
+		 </exclude_folder_types>
+         
+         <!-- default selected type -->
+         <!-- accepted values: <base_type> value or its sub types -->
+         <default_type>dm_folder</default_type>
+      </component>
+      
+   </scope>
+   
+   <!-- Allow DCOs to import facility folders...  -->
+   <scope docbaselist="bhpb_pet_docbases" role = "pet_dco_role">
+      
+      <!-- the document list component definition -->
+      <component id="newfolder" extends="newfolder:webcomponent/config/library/create/newfolder_component.xml">
+         
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewFolder</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewFolder</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewFolderNlsProp</nlsbundle>
+         
+         <!-- default settings  -->
+
+         <!-- base type for types to be retrived -->
+         <!-- accepted values: dm_folder or its sub types -->
+         <base_type>dm_folder</base_type>
+         
+         <!--  Filter default type list with the below -->
+         <base_folder_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='false'>dm_folder</object_type>
+				<object_type cascade='true'>bhpb_folder</object_type>
+		 </base_folder_types>
+         
+         <!-- default selected type -->
+         <!-- accepted values: <base_type> value or its sub types -->
+         <default_type>dm_folder</default_type>
+      </component>
+      
+   </scope>
+   
+     <scope docbaselist="bhpb_wales_docbases">
+       <!-- the document list component definition -->
+      <component id="newfolder" extends="newfolder:webcomponent/config/library/create/newfolder_component.xml">
+         
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewFolder</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewFolder</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewFolderNlsProp</nlsbundle>
+         
+         <!-- default settings  -->
+
+         <!-- base type for types to be retrived -->
+         <!-- accepted values: dm_folder or its sub types -->
+         <base_type>dm_folder</base_type>
+         
+         <!--  Filter default type list with the below -->
+         <base_folder_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='false'>dm_folder</object_type>
+				<object_type cascade='true'>bhpb_folder</object_type>
+		 </base_folder_types>
+		 <exclude_folder_types>
+		 	<object_type cascade = 'false'>bhpb_pet_facility</object_type>
+		 </exclude_folder_types>
+         
+         <!-- default selected type -->
+         <!-- accepted values: <base_type> value or its sub types -->
+         <default_type>dm_folder</default_type>
+      </component>
+      
+   </scope>
+   
+   <!-- Allow DCOs to import facility folders...  -->
+   <scope docbaselist="bhpb_wales_docbases" role = "pet_dco_role">
+      
+      <!-- the document list component definition -->
+      <component id="newfolder" extends="newfolder:webcomponent/config/library/create/newfolder_component.xml">
+         
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewFolder</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewFolder</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewFolderNlsProp</nlsbundle>
+         
+         <!-- default settings  -->
+
+         <!-- base type for types to be retrived -->
+         <!-- accepted values: dm_folder or its sub types -->
+         <base_type>dm_folder</base_type>
+         
+         <!--  Filter default type list with the below -->
+         <base_folder_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='false'>dm_folder</object_type>
+				<object_type cascade='true'>bhpb_folder</object_type>
+		 </base_folder_types>
+         
+         <!-- default selected type -->
+         <!-- accepted values: <base_type> value or its sub types -->
+         <default_type>dm_folder</default_type>
+      </component>
+      
+   </scope>
+   <!-- LBA -->
+        <scope docbaselist="edt_lba_docbases">
+       <!-- the document list component definition -->
+      <component id="newfolder" extends="newfolder:webcomponent/config/library/create/newfolder_component.xml">
+         
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewFolder</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewFolder</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewFolderNlsProp</nlsbundle>
+         
+         <!-- default settings  -->
+
+         <!-- base type for types to be retrived -->
+         <!-- accepted values: dm_folder or its sub types -->
+         <base_type>dm_folder</base_type>
+         
+         <!--  Filter default type list with the below -->
+         <base_folder_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='true'>dm_folder</object_type>
+		 </base_folder_types>
+		 <exclude_folder_types>
+		 </exclude_folder_types>
+         
+         <!-- default selected type -->
+         <!-- accepted values: <base_type> value or its sub types -->
+         <default_type>dm_folder</default_type>
+      </component>
+      
+   </scope>
+   
+      <!-- PAK -->
+        <scope docbaselist="edt_pak_docbases">
+       <!-- the document list component definition -->
+      <component id="newfolder" extends="newfolder:webcomponent/config/library/create/newfolder_component.xml">
+         
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewFolder</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewFolder</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewFolderNlsProp</nlsbundle>
+         
+         <!-- default settings  -->
+
+         <!-- base type for types to be retrived -->
+         <!-- accepted values: dm_folder or its sub types -->
+         <base_type>dm_folder</base_type>
+         
+         <!--  Filter default type list with the below -->
+         <base_folder_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<object_type cascade='true'>dm_folder</object_type>
+		 </base_folder_types>
+		 <exclude_folder_types>
+		 </exclude_folder_types>
+         
+         <!-- default selected type -->
+         <!-- accepted values: <base_type> value or its sub types -->
+         <default_type>dm_folder</default_type>
+      </component>
+      
+   </scope>
+   
+    <!-- END PET - Default to Petrolum type for pet users  -->
+    
+     <!-- START LEGAL -->
+   <scope docbaselist="legal_docbases">
+      
+      <!-- the document list component definition -->
+      <component id="newfolder" extends="newfolder:webcomponent/config/library/create/newfolder_component.xml">
+         
+         <!-- Component Behavior -->
+         <!-- class>com.documentum.webcomponent.library.create.NewFolder</class-->
+         <class>com.bhpb.imp.wdk.common.create.NewFolder</class>
+         <nlsbundle>com.documentum.webcomponent.library.create.NewFolderNlsProp</nlsbundle>
+         
+         <!-- default settings  -->
+
+         <!-- base type for types to be retrived -->
+         <!-- accepted values: dm_folder or its sub types -->
+         <base_type>dm_folder</base_type>
+         
+         <!--  Filter default type list with the below -->
+         <base_folder_types>
+				<!-- Only add object types which cascade from or are the below types to combos -->
+				<!-- object_type cascade='false'>dm_folder</object_type-->
+				<object_type cascade='true'>legal_folder</object_type>
+		 </base_folder_types>
+         
+         <!-- default selected type -->
+         <!-- accepted values: <base_type> value or its sub types -->
+         <default_type>dm_folder</default_type>
+      </component>
+      
+   </scope>
+    <!-- END LEGAL -->
+    
+    
+      
+</config>
+

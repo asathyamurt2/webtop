@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<config version='1.0'>
+   <scope>
+      <component id="importcontainer" extends="importcontainer:webcomponent/config/library/contenttransfer/importcontent/importcontainer_component.xml">    
+         <!-- 
+         Maximum allowed number of import files in one operation. The number of files that
+         can be accomodated in one operation is dependent on the max heap settings of the app server
+         -->
+         <max-import-file-count>500</max-import-file-count>
+   		<class>com.bhpb.imp.controldoc.importcomp.BhpbControlldocImportContainer</class>	
+      </component>
+   </scope>
+   
+</config>

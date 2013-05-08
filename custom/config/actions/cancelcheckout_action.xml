@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   
+   <scope type="dm_sysobject" role="pet_dco_role">
+   
+	     <action id="cancelcheckout" extends="cancelcheckout:webcomponent/config/actions/dm_sysobject_actions.xml">
+         <!-- Cancel Checkout action -->
+
+         <preconditions>
+
+            <!-- 
+            	New pre-condition: users belonging to a document controllers role should be able to cancel
+            	other people's checkouts
+            -->
+            	<precondition class="com.bhpb.imp.wdk.webtop.cancelcheckout.CancelCheckoutPreCondition">
+            
+            </precondition>
+         </preconditions>
+         <execution class="com.documentum.web.formext.action.LaunchComponentWithPermitCheck">
+         	<!-- 
+         		The Cancel Checkout Container component should be launched for Petroleum DCOs EVEN
+         		when they don't have VERSION permit on the document they intend to unlock.
+         	-->
+            <permit>browse_permit</permit>
+            <dynamicfilter class="com.documentum.web.formext.action.LaunchComponentFilter">
+               <option>
+                  <criteria>
+                     <criterion name='contenttransfer' value='applet' evaluatorclass='com.documentum.web.contentxfer.ContentTransferLaunchComponentEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <component>cancelcheckout</component>
+                     <container>cancelcheckoutcontainer</container>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name='contenttransfer' value='http' evaluatorclass='com.documentum.web.contentxfer.ContentTransferLaunchComponentEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <component>httpcancelcheckout</component>
+                     <container>httpcancelcheckoutcontainer</container>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name='contenttransfer' value='ucf' evaluatorclass='com.documentum.web.contentxfer.ContentTransferLaunchComponentEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <component>cancelcheckout</component>
+                     <container>cancelcheckoutcontainer</container>
+                  </selection>
+               </option>
+            </dynamicfilter>
+         </execution>
+      </action>
+	</scope>
+</config>

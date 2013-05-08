@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope role="edit_registered_tables">
+
+     <component id="petcontrolleddoclocator" extends="alldocumentlocator:webcomponent/config/library/locator/documentlocators_component.xml">
+     
+     	     <objecttype>bhpb_pet_controlled_doc</objecttype>
+     
+              <!-- Component specific Configuration -->
+              <!-- define the views for root, container, and flatlist -->
+              <views>
+                 <!-- cabinet view -->
+                 <view applyto='root'>
+                    <queryfiltersets>
+                       <queryfilterset>
+                          <queryfilter>
+                             <containertypes>dm_cabinet</containertypes>
+                             <includetypes>dm_cabinet</includetypes>
+                          </queryfilter>
+                       </queryfilterset>
+                    </queryfiltersets>
+                 </view>
+     
+                 <view applyto='container,flatlist'>
+                    <queryfiltersets>
+                       <queryfilterset>
+                          <queryfilter>
+                             <!-- show all -->
+                             <displayname><nlsid>MSG_SHOWALL</nlsid></displayname>
+                             <!-- show folders before other objects and make folders navigatorable -->
+                             <containertypes>dm_folder</containertypes>
+                             <attributefilters>
+			         <attributefilter>
+			            <and>true</and>
+			            <attribute>r_lock_owner</attribute>
+				    <predicate>eq</predicate>
+				   <value dqlformatted='true'>' '</value>
+			     </attributefilter>
+			                                     
+                             </attributefilters>
+                          </queryfilter>
+     
+                          <!-- show folders -->
+                          <queryfilter>
+                             <displayname><nlsid>MSG_SHOWFOLDERS</nlsid></displayname>
+                             <!-- show folders before other objects and make folders navigatorable -->
+                             <containertypes>dm_folder</containertypes>
+                             <includetypes>dm_folder</includetypes>
+                             
+                          </queryfilter>
+     
+                          <!-- hide folders -->
+                          <queryfilter>
+                             <displayname><nlsid>MSG_HIDEFOLDERS</nlsid></displayname>
+                             <excludetypes>dm_folder</excludetypes>
+                             <attributefilters>
+				 <attributefilter>
+				    <and>true</and>
+				    <attribute>r_lock_owner</attribute>
+				    <predicate>eq</predicate>
+				   <value dqlformatted='true'>' '</value>
+			     </attributefilter>
+			     			                                     
+                             </attributefilters>
+                          </queryfilter>
+     
+                          <!-- show all documents -->
+                          <queryfilter>
+                             <displayname><nlsid>MSG_SHOWDOCUMENTS</nlsid></displayname>
+                             <includetypes>bhpb_pet_controlled_doc</includetypes>
+                             <attributefilters>
+				 <attributefilter>
+				    <and>true</and>
+				    <attribute>r_lock_owner</attribute>
+				    <predicate>eq</predicate>
+				   <value dqlformatted='true'>' '</value>
+			     </attributefilter>
+			     			                                     
+                             </attributefilters>
+                          </queryfilter>
+     
+                          <!-- show all word documents -->
+                          <queryfilter>
+                             <displayname><nlsid>MSG_SHOWALLWORDDOCUMENTS</nlsid></displayname>
+                             <includetypes>bhpb_pet_controlled_doc</includetypes>
+     
+                             <attributefilters>
+                                <attributefilter>
+                                   <attribute>a_content_type</attribute>
+                                   <predicate>sw</predicate>
+                                   <value dqlformatted='false'>msw</value>
+                                </attributefilter>
+				 <attributefilter>
+				    <and>true</and>
+				    <attribute>r_lock_owner</attribute>
+				    <predicate>eq</predicate>
+				   <value dqlformatted='true'>' '</value>
+			        </attributefilter>
+			      </attributefilters>
+                          </queryfilter>
+     
+                          <!-- show word documents -->
+                          <queryfilter>
+                             <displayname><nlsid>MSG_SHOWWORDDOCUMENTS</nlsid></displayname>
+                             <includetypes>bhpb_pet_controlled_doc</includetypes>
+     
+                             <attributefilters>
+                                <attributefilter>
+                                   <and>true</and>
+                                   <attribute>a_content_type</attribute>
+                                   <predicate>sw</predicate>
+                                   <value dqlformatted='false'>msw</value>
+                                </attributefilter>
+                                <attributefilter>
+                                   <and>true</and>
+                                   <attribute>a_content_type</attribute>
+                                   <predicate>nc</predicate>
+                                   <value dqlformatted='false'>template</value>
+                                </attributefilter>
+                                <attributefilter>
+				    <and>true</and>
+				    <attribute>r_lock_owner</attribute>
+				    <predicate>eq</predicate>
+				   <value dqlformatted='true'>' '</value>
+			        </attributefilter>
+                             </attributefilters>
+                          </queryfilter>
+     
+                          <!-- show word templates -->
+                          <queryfilter>
+                             <displayname><nlsid>MSG_SHOWWORDTEMPALTES</nlsid></displayname>
+                             <includetypes>bhpb_pet_controlled_doc</includetypes>
+     
+                             <attributefilters>
+                                <attributefilter>
+                                   <and>true</and>
+                                   <attribute>a_content_type</attribute>
+                                   <predicate>sw</predicate>
+                                   <value dqlformatted='false'>msw</value>
+                                </attributefilter>
+                                <attributefilter>
+                                   <and>true</and>
+                                   <attribute>a_content_type</attribute>
+                                   <predicate>ew</predicate>
+                                   <value dqlformatted='false'>template</value>
+                                </attributefilter>
+                                <attributefilter>
+				    <and>true</and>
+				    <attribute>r_lock_owner</attribute>
+				    <predicate>eq</predicate>
+				   <value dqlformatted='true'>' '</value>
+				</attributefilter>
+                             </attributefilters>
+                          </queryfilter>
+     
+                          <!-- show html documents -->
+                          <queryfilter>
+                             <displayname><nlsid>MSG_SHOWHTMLDOCUMENTS</nlsid></displayname>
+                             <includetypes>bhpb_pet_controlled_doc</includetypes>
+     
+                             <attributefilters>
+                                <attributefilter>
+                                   <attribute>a_content_type</attribute>
+                                   <predicate>eq</predicate>
+                                   <value dqlformatted='false'>html</value>
+                                </attributefilter>
+                                <attributefilter>
+				    <and>true</and>
+				    <attribute>r_lock_owner</attribute>
+				    <predicate>eq</predicate>
+				   <value dqlformatted='true'>' '</value>
+			        </attributefilter>
+                             </attributefilters>
+                          </queryfilter>
+     
+                       </queryfilterset>
+                    </queryfiltersets>
+                 </view>
+              </views>
+     
+      </component>
+       <component id="petcontrolleddoclocatorcontainer" extends="documentlocatorcontainer:webcomponent/config/library/locator/documentlocators_component.xml">
+       
+               <!-- Contained components -->
+               <contains>
+                 <component>petcontrolleddoclocator</component>
+                  <component>documentsubscriptionlocator</component>
+                  <component>mydocumentlocator</component>
+               </contains>
+            
+      </component>
+    
+   </scope>
+</config>
+

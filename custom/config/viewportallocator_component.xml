@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version="1.0">
+   <scope>
+      <component id="viewportallocator" extends="sendlocator:webcomponent/config/library/sendlocator/sendlocator_component.xml">
+      
+      	<class>com.bhpb.imp.wdk.webtop.sendlocator.ViewPortalLocator</class>
+      	<nlsbundle>viewlocator.ViewLocatorNlsProp</nlsbundle>
+
+      </component>
+   </scope>
+</config>  

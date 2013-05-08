@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+
+
+   <!-- bhpb_pet_bcd_ctrl_doc specific attributes page -->
+   <scope type='bhpb_pet_bcd_ctrl_doc'>
+      <component id="bcdattributes">
+         
+         <!-- Description (not NLS'd) -->
+         <desc>
+            BHPB PET BCD controlled document attribute component:  Provides UI and behaviour for showing and 
+            editing a document's attributes. This tab is only for PET BCD Docs.
+         </desc>
+
+         <!-- Component Layouts -->
+         <pages>
+            <start>/custom/library/properties/bcdattributes.jsp</start>
+         </pages>
+         
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.common.properties.bcd.AFAttributes</class>
+         <nlsbundle>properties.BCDAttributesNlsProp</nlsbundle>
+      </component>
+   </scope>
+   
+    
+</config>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--***********************************************************************-->
+<!--                                                                       -->
+<!-- Confidential Property of Documentum, Inc.                             -->
+<!-- (c) Copyright Documentum, Inc. 2004.                                  -->
+<!-- All Rights reserved.                                                  -->
+<!-- May not be used without prior written agreement                       -->
+<!-- signed by a Documentum corporate officer.                             -->
+<!--                                                                       -->
+<!--***********************************************************************-->
+<!--                                                                       -->
+<!-- Project        Web Development Kit                                    -->
+<!-- Module         Content Transfer					   -->
+<!-- File           drlauthenticate_component.xml_component.xml            -->
+<!-- Description    DRL Authenticate Definition                            -->
+<!-- Created on                                                		   -->
+<!-- Tab width                                                             -->
+<!--                                                                       -->
+<!--***********************************************************************-->
+<!--                                                                       -->
+<!-- VCS Maintained Data                                                   -->
+<!--                                                                       -->
+<!-- Revision 		                                                   -->
+<!-- Modified on     				                           -->
+<!--                                                                       -->
+<!-- Log at EOF                                                            -->
+<!--                                                                       -->
+<!--***********************************************************************-->
+
+<config version='1.0'>
+   <scope>
+
+      <!-- DRL Request Connection component definition -->
+      <component id="drl_ssca_authenticate" extends="drl_ssca:custom/config/drl_ssca_component.xml">
+      </component>
+   </scope>
+</config>
+

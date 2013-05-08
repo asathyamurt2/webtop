@@ -1,0 +1,24 @@
+<config version="1.0">
+	<scope docbase="PET_HOU">
+      <component id="import" extends="import:webcomponent/config/library/contenttransfer/importcontent/import_component.xml">
+
+         <pages>
+            <start>/custom/library/import/importContent_hou.jsp</start>
+         </pages>
+<class>com.bhpb.imp.controldoc.importcomp.BhpbControlldocImportHou</class>
+<nlsbundle>import.ImportContentNlsProp_hou</nlsbundle>
+	</component>
+	
+   </scope>
+   <scope docbase="PET_PER">
+      <component id="import" extends="import:webcomponent/config/library/contenttransfer/importcontent/import_component.xml">
+
+         <pages>
+            <start>/custom/library/import/importContent.jsp</start>
+         </pages>
+<class>com.bhpb.imp.controldoc.importcomp.BhpbControlldocImport</class>
+<nlsbundle>import.ImportContentNlsProp</nlsbundle>
+	</component>
+	
+   </scope>
+</config>

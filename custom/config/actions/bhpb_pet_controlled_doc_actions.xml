@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+	<scope type="bhpb_pet_controlled_doc">
+
+		<!-- custom action execution classes to allow DCOs to manipulate lifecyles on documents
+		where they are not the owner of the document (promote, demote, suspend, resume and detach) -->
+      <!-- Promote action -->
+      <action id="promote">
+         <params>
+            <param name="objectId" required="true"></param>
+            <param name="lockOwner" required="false"></param>
+            <param name="ownerName" required="false"></param>
+         </params>
+
+         <preconditions>
+            <precondition class="com.documentum.webcomponent.library.actions.PromoteAction">
+            </precondition>
+         </preconditions>
+
+         <execution class="com.documentum.web.formext.action.RedirectActionExecution">
+            <dynamicfilter class="com.documentum.web.formext.action.LaunchComponentFilter">
+               <option>
+                  <criteria>
+                      <criterion name='isreference' value='true' evaluatorclass='com.documentum.webcomponent.library.actions.ReferenceEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <execution class="com.documentum.web.formext.action.LaunchComponent">
+                        <component>informinvalidactionforreference</component>
+                     </execution>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                  </criteria>
+                  <selection>
+                     <!-- execution class="com.documentum.webcomponent.library.actions.PromoteAction"-->
+                     <execution class="com.bhpb.imp.wdk.webtop.execution.pet.PromoteAction">
+                        <nlsbundle>com.documentum.webcomponent.library.actions.PromoteNlsProp</nlsbundle>
+                     </execution>
+                  </selection>
+               </option>
+            </dynamicfilter>
+         </execution>
+      </action>
+
+      <!-- Demote action -->
+      <action id="demote">
+         <params>
+            <param name="objectId" required="true"></param>
+            <param name="lockOwner" required="false"></param>
+            <param name="ownerName" required="false"></param>
+         </params>
+
+         <preconditions>
+            <precondition class="com.documentum.webcomponent.library.actions.DemoteAction">
+            </precondition>
+         </preconditions>
+
+         <execution class="com.documentum.web.formext.action.RedirectActionExecution">
+            <dynamicfilter class="com.documentum.web.formext.action.LaunchComponentFilter">
+               <option>
+                  <criteria>
+                      <criterion name='isreference' value='true' evaluatorclass='com.documentum.webcomponent.library.actions.ReferenceEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <execution class="com.documentum.web.formext.action.LaunchComponent">
+                        <component>informinvalidactionforreference</component>
+                     </execution>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                  </criteria>
+                  <selection>
+                     <!--  execution class="com.documentum.webcomponent.library.actions.DemoteAction"-->
+                     <execution class="com.bhpb.imp.wdk.webtop.execution.pet.DemoteAction">
+                        <nlsbundle>com.documentum.webcomponent.library.actions.DemoteNlsProp</nlsbundle>
+                     </execution>
+                  </selection>
+               </option>
+            </dynamicfilter>
+         </execution>
+      </action>
+
+      
+      <!-- Suspend action -->
+      <action id="suspendlifecycle">
+         <params>
+            <param name="objectId" required="true"></param>
+            <param name="lockOwner" required="false"></param>
+            <param name="ownerName" required="false"></param>
+         </params>
+
+         <preconditions>
+            <precondition class="com.documentum.webcomponent.library.actions.SuspendLifecycleAction">
+            </precondition>
+         </preconditions>
+
+         <execution class="com.documentum.web.formext.action.RedirectActionExecution">
+            <dynamicfilter class="com.documentum.web.formext.action.LaunchComponentFilter">
+               <option>
+                  <criteria>
+                      <criterion name='isreference' value='true' evaluatorclass='com.documentum.webcomponent.library.actions.ReferenceEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <execution class="com.documentum.web.formext.action.LaunchComponent">
+                        <component>informinvalidactionforreference</component>
+                     </execution>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                  </criteria>
+                  <selection>
+                     <!-- execution class="com.documentum.webcomponent.library.actions.SuspendLifecycleAction"-->
+                     <execution class="com.bhpb.imp.wdk.webtop.execution.pet.SuspendLifecycleAction">
+                        <nlsbundle>com.documentum.webcomponent.library.actions.SuspendLifecycleNlsProp</nlsbundle>
+                     </execution>
+                  </selection>
+               </option>
+            </dynamicfilter>
+         </execution>
+      </action>
+
+
+      <!-- Resume action -->
+      <action id="restorelifecycle">
+         <params>
+            <param name="objectId" required="true"></param>
+            <param name="lockOwner" required="false"></param>
+            <param name="ownerName" required="false"></param>
+         </params>
+
+         <preconditions>
+            <precondition class="com.documentum.webcomponent.library.actions.ResumeLifecycleAction">
+            </precondition>
+         </preconditions>
+
+         <execution class="com.documentum.web.formext.action.RedirectActionExecution">
+            <dynamicfilter class="com.documentum.web.formext.action.LaunchComponentFilter">
+               <option>
+                  <criteria>
+                      <criterion name='isreference' value='true' evaluatorclass='com.documentum.webcomponent.library.actions.ReferenceEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <execution class="com.documentum.web.formext.action.LaunchComponent">
+                        <component>informinvalidactionforreference</component>
+                     </execution>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                  </criteria>
+                  <selection>
+                     <!-- execution class="com.documentum.webcomponent.library.actions.ResumeLifecycleAction"-->
+                     <execution class="com.bhpb.imp.wdk.webtop.execution.pet.ResumeLifecycleAction">
+                        <nlsbundle>com.documentum.webcomponent.library.actions.ResumeLifecycleNlsProp</nlsbundle>
+                     </execution>
+                  </selection>
+               </option>
+            </dynamicfilter>
+         </execution>
+      </action>
+
+      <!-- Detach Lifecycle action -->
+      <action id="detachlifecycle">
+         <params>
+            <param name="objectId" required="true"></param>
+            <param name="lockOwner" required="false"></param>
+            <param name="ownerName" required="false"></param>
+         </params>
+
+         <preconditions>
+            <precondition class="com.documentum.webcomponent.library.actions.DetachLifecycleAction">
+            </precondition>
+         </preconditions>
+
+         <execution class="com.documentum.web.formext.action.RedirectActionExecution">
+            <dynamicfilter class="com.documentum.web.formext.action.LaunchComponentFilter">
+               <option>
+                  <criteria>
+                      <criterion name='isreference' value='true' evaluatorclass='com.documentum.webcomponent.library.actions.ReferenceEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <execution class="com.documentum.web.formext.action.LaunchComponent">
+                        <component>informinvalidactionforreference</component>
+                     </execution>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                  </criteria>
+                  <selection>
+                     <!-- execution class="com.documentum.webcomponent.library.actions.DetachLifecycleAction"-->
+                     <execution class="com.bhpb.imp.wdk.webtop.execution.pet.DetachLifecycleAction">
+                        <nlsbundle>com.documentum.webcomponent.library.actions.DetachLifecycleNlsProp</nlsbundle>
+                     </execution>
+                  </selection>
+               </option>
+            </dynamicfilter>
+         </execution>
+      </action>
+
+	<!-- Apply Lifecycle action 
+      <action id="applylifecycle">
+         <params>
+            <param name="objectId" required="true"></param>
+            <param name="lockOwner" required="false"></param>
+            <param name="isReplica" required="false"></param>
+         </params>
+
+         <preconditions>
+            <precondition class="com.documentum.webcomponent.library.actions.ApplyLifecycleAction">
+            </precondition>
+         </preconditions>
+
+         <execution class="com.documentum.web.formext.action.LaunchComponent">
+            <dynamicfilter class="com.documentum.web.formext.action.LaunchComponentFilter">
+               <option>
+                  <criteria>
+                      <criterion name='isreference' value='true' evaluatorclass='com.documentum.webcomponent.library.actions.ReferenceEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <component>informinvalidactionforreference</component>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name='isreplica' value='true' evaluatorclass='com.documentum.webcomponent.library.actions.ReplicaEvaluator'/>
+                  </criteria>
+                  <selection>
+                     <component>informinvalidactionforreplica</component>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                  </criteria>
+                  <selection>
+                     <component>applylifecycleall_pet</component>
+                     <container>applylifecycle</container>
+                  </selection>
+               </option>
+            </dynamicfilter>
+         </execution>
+      </action-->
+
+
+     <!--  <action id="applylifecycle">
+         <desc>
+            Attaches a lifecycle (business policy) to an object.
+         </desc>
+         <params>
+            <param name="objectId" required="true"/>
+            <param name="lockOwner" required="false"/>
+            <param name="isReplica" required="false"/>
+         </params>
+         <preconditions>
+            <precondition class="com.documentum.webcomponent.library.actions.ApplyLifecycleAction">
+            </precondition>
+         </preconditions>
+         <execution class="com.documentum.web.formext.action.LaunchComponent">
+            <dynamicfilter class="com.documentum.web.formext.action.LaunchComponentFilter">
+               <option>
+                  <criteria>
+                     <criterion name="ismessagearchiveattachment" value="true" evaluatorclass="com.documentum.webcomponent.library.messagearchive.MessageArchiveAttachEvaluator"/>
+                  </criteria>
+                  <selection>
+                        <component>informinvalidactionformessagearchiveattach</component>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name="isreference" value="true" evaluatorclass="com.documentum.webcomponent.library.actions.ReferenceEvaluator"/>
+                  </criteria>
+                  <selection>
+                     <component>informinvalidactionforreference</component>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                     <criterion name="isreplica" value="true" evaluatorclass="com.documentum.webcomponent.library.actions.ReplicaEvaluator"/>
+                  </criteria>
+                  <selection>
+                     <component>informinvalidactionforreplica</component>
+                  </selection>
+               </option>
+               <option>
+                  <criteria>
+                  </criteria>
+                  <selection>
+                     <component>applylifecycleall_pet</component>
+                     <container>applylifecycle</container>
+                  </selection>
+               </option>
+            </dynamicfilter>
+         </execution>
+         <invocation>
+            <modalpopup>
+               <windowsize>large</windowsize>
+               <refreshparentwindow>onok</refreshparentwindow>
+            </modalpopup>
+         </invocation>
+	</action>-->
+	
+	
+	</scope>
+	
+</config>

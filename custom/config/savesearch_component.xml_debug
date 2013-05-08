@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ 
+
+<config version="1.0">
+   <scope>
+      <component id="savesearch" extends="savesearch:webcomponent/config/library/savesearch/savesearchex/savesearch_component.xml">
+
+         <class>com.bhpb.imp.wdk.webtop.search.SaveSearch</class>
+
+      </component>
+   </scope>
+</config>

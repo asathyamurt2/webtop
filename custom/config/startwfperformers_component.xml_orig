@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope role='pet_dco_role'>
+   
+      <component id="startwfperformers" extends="startwfperformers:webcomponent\config\library\workflow\performers\startwfperformers_component.xml">
+      
+         <!-- Description (not NLS'd) -->
+         <desc>
+            This component is part of the start workflow component. It manages 
+            the process of performer assignment.
+         </desc>
+      
+         <class>com.bhpb.imp.wdk.webtop.workflow.pet.StartPerformers</class>
+      </component>
+      
+   </scope>
+   
+</config>
+
+

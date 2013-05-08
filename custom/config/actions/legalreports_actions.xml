@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+  <scope docbaselist="legal_docbases">
+
+      <action id="folderarchivalreportaction">
+         <execution class="com.documentum.web.formext.action.LaunchComponent">
+            <container>legalreportcontainer</container>
+            <component>folderarchivalreport</component>
+          </execution>
+      </action>
+      
+      <action id="namingconventionreportaction">
+               <execution class="com.documentum.web.formext.action.LaunchComponent">
+                  <container>legalreportcontainer</container>
+                  <component>namingconventionreport</component>
+                </execution>
+      </action>
+  </scope>  
+</config>

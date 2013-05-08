@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<config version='1.0'>
+   <scope role="pet_dco_role">
+   
+      <!--  component definition -->
+      <component id="generatenumberformat">
+      
+		 <!-- Description (not NLS'd) -->
+	 <desc>Used to select facility, enter number format name and configure number format contents	 </desc>
+         <pages>
+         	<start>/custom/library/docnumber/pet/selectFacility.jsp</start>
+         	<selectcontent>/custom/library/docnumber/pet/configureContents.jsp</selectcontent>
+         </pages>
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.docnumber.pet.GenerateNumberFormat</class>
+         <nlsbundle>docnumber.pet.NumberFormatNlsProp</nlsbundle>
+      </component>
+	</scope>
+	
+	<scope role="pet_dco_role">
+   
+      <!--  component definition -->
+      <component id="createformatcontent">
+      
+		 <!-- Description (not NLS'd) -->
+	 <desc> Used to create format content - name, facility, codes and descriptions	 </desc>
+         <pages>
+         	<start>/custom/library/docnumber/pet/createContent.jsp</start>
+         </pages>
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.docnumber.pet.CreateFormatContent</class>
+         <nlsbundle>docnumber.pet.NumberFormatNlsProp</nlsbundle>
+      </component>
+	</scope>
+	
+	 <scope role="pet_dco_role">
+   
+      <!--  component definition -->
+      <component id="editformatcontent">
+      
+		 <!-- Description (not NLS'd) -->
+	 <desc>Edit existing number format content values and descriptions	 </desc>
+         <pages>
+         	<start>/custom/library/docnumber/pet/selectContent.jsp</start>
+         	<selectcontent>/custom/library/docnumber/pet/editContent.jsp</selectcontent>
+         </pages>
+         <!-- Component Behavior -->
+         <class>com.bhpb.imp.wdk.webtop.docnumber.pet.EditFormatContent</class>
+         <nlsbundle>docnumber.pet.NumberFormatNlsProp</nlsbundle>
+      </component>
+	</scope>
+</config>

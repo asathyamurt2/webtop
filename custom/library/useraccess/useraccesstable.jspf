@@ -1,0 +1,71 @@
+<%@ include file ='/wdk/fragments/modal/modalDatagridContainerStart.jsp' %>
+<%--  webcomponent/library/permissions/permissionstable.jsp was used as --%>
+<%-- starting point and significantly re-hashed for this jsp --%>
+<dmf:datagrid name="accessorsgrid" cellspacing="0" cellpadding="0" bordersize="0" paged='true'>
+<tr class='pagerBackground'>
+<td colspan=20 align=center height=30 valign="middle">
+<table width=100% border=0 cellspacing=0 cellpadding=0>
+<tr valign="top" >
+<td width="10" class="spacer">&nbsp;</td>
+<td align=center width=100%></td>
+<td width="10" class="spacer">&nbsp;</td>
+<td align=right nowrap valign="top">&nbsp;</td>
+<td valign="middle" nowrap>
+&nbsp;
+</td>
+<td width="10" class="spacer">&nbsp;</td>
+<td align=center width=100%><dmf:datapaging name='pager1' gotopageclass='doclistPager'/></td>
+<td width="10" class="spacer">&nbsp;</td>
+<td align=right nowrap valign="top"><dmf:label nlsid='MSG_SHOW_ITEMS'/>&nbsp;</td>
+<td valign="middle" nowrap>
+<dmf:datapagesize name='sizer' preference='application.display.classic' tooltipnlsid='MSG_SHOW_ITEMS'/>&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<dmf:columnpanel columnname='accessorPanel'>
+<th scope='col' align='left' class="doclistfilenamedatagrid">
+<dmf:datasortlink name='sort0' nlsid='MSG_ACCESSORS' column='r_accessor_name' cssclass='doclistbodyDatasortlink'/>
+</th>
+</dmf:columnpanel>
+<dmf:columnpanel columnname='permitPanel'>
+<th scope='col' align='left' class="doclistfilenamedatagrid">
+<dmf:datasortlink name='sort1' nlsid='MSG_PERMITS' column='r_accessor_permit' cssclass='doclistbodyDatasortlink'/>
+</th>
+</dmf:columnpanel>
+<dmf:columnpanel columnname='extendedPanel'>
+<th scope='col' align='left' class="doclistfilenamedatagrid">
+<dmf:datasortlink name='sort2' nlsid='MSG_USERNAMES' column='users_names' cssclass='doclistbodyDatasortlink'/>
+</th>
+</dmf:columnpanel>
+</tr>
+<dmf:datagridRow cssclass="contentBackground" valign="top">
+<dmf:columnpanel columnname='accessorPanel'>
+<td valign="top" class="doclistfilenamedatagrid">
+<dmf:label datafield='accessor_display_name'/>
+</td>
+</dmf:columnpanel>
+<dmf:columnpanel columnname='permitPanel'>
+<td valign="top" class="doclistfilenamedatagrid">
+<%--         <dmda:permissionvalueformatter>--%>
+<dmf:label datafield='r_accessor_permit'/>
+<%--         </dmda:permissionvalueformatter>--%>
+</td>
+</dmf:columnpanel>
+<dmf:columnpanel columnname='extendedPanel'>
+<td valign='top' class="doclistfilenamedatagrid">
+<%--         <dmda:extpermvalueformatter >--%>
+<dmf:label datafield='users_names'/>
+<%--         </dmda:extpermvalueformatter>--%>
+</td>
+</dmf:columnpanel>
+</dmf:datagridRow>
+<dmf:nodataRow height='24' cssclass='contentBackground'>
+<td>
+<dmf:label nlsid='MSG_NO_DATA'/>
+</td>
+</dmf:nodataRow>
+</dmf:datagrid>
+<%@ include file ='/wdk/fragments/modal/modalDatagridContainerEnd.jsp' %>
